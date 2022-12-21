@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상수</title>
+    <script>
+        const pi=3.14;
+        console.log('pi'+pi);//log()는 함수 console은 객체
+        //함수는 어딘가에 소속되어 있는데 위에건 log란 함수가 console이란 객체에 소속되어있는거
+        //ex window.alert() alert함수가 window에 소속되어있다.(window는 생략가능)
+        const r=10;//식별자가 r인 상수를 선언, 초기화한다.
+        alert(2*pi*r);//둘레
+        alert(r*pi*r);//너비
+        //상수는 지정해놓고 다양하게 사용할수있다.
+        //r=20; 상수는 값을 변경할 수 없다.(재할당불가)
+        const r3;
+        r3=30; //이것도 문법오류
+        //선언해놓고 값을 할당할 수 없다.
+        const r3=30; //선언과 동시에 값을 넣어야한다.
+   
+
+    </script>
+</head>
+<body>
+    <p>const 값 재할당 불가</p>
+    <p>const는 같은 식별자 선언불가</p>
+</body>
+</html>
