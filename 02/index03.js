@@ -17,3 +17,11 @@ let b=6;
 console.log('a*b=${a*b}');
 let total=a*b;
 console.log(total, typeof(total));
+
+let x0="커피는";
+let x1=10;
+let x2="살";
+let x3=true;
+let x4=x0+x1+x2+x3;
+
+document.write(typeof x4)
