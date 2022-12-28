@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      /* img72px 여백 8px = 80px */
+
+      #frame {
+        width: 232px;
+        height: 88px;
+        position: relative;
+        margin: 10px auto;
+        border: 1px solid blue;
+        /* overflow:hidden*/
+      } /*보이는공간은 좀작게 */
+      #banner {
+        width: 476px;
+        border: 1px solid red;
+        height: 54px;
+        display: flex;
+      }
+      #banner li {
+        flex: 0 0 78px;
+        list-style: none;
+        width: 78px;
+        height: 100%;
+        background-color: gray;
+        font-size: 2em;
+        margin-right:1px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+      //document.addEventListener("Dom djWjrh....")이전파일에있음요
+      $(function () {
+        //변수 :변수로 잡을때는 변해야하는 애들을 잡음
+        let list=$("#banner");
+        const show_num=3;//한번에 보일 갯수 지정
+        const total=list.find("li").length;
+        console.log(length)
+        //가지고 있는 이미지 갯수 (넘어가면안댐) : 배너안에 li 수정 시 알아서 가져오니까
+        //length 몇개있는지 길이(js 함수)
+        const li_width=list.find("li").eq(0).width();
+        const copyObj=list.find("li").clone().css('background-color',"lightcoral");
+        list.append(copyObj);
+        //슬라이드기능 구현 시 번호를 저장할 변수를 먼저 만들자
+        let num=0;
+
+        $(".next").click(function(){
+          if(num==total){num=0;
+          list.css("margin-left",0)
+          }
+          num++;//0
+          list.stop().animate({"margin-left" : -li_width*num},500)//1
+        })
+
+        $(".prev").click(function(){
+          if(num==0){num=total;
+          list.css("margin-left",-li_width*num)
+          }
+          num--;
+          list.stop().animate({"margin-left" : -li_width*num},500);
+          return false;
+        })
+        //overflow:hidden 주석풀고 색깔똑같이 맞추면됨
+        
+        //autoplay
+        //clearInterval(식별자) 식별자는 setInterval에 붙여주면됨
+        //ex,  이러면 time이란 값에 함수가 담김
+        timer = setInterval (autoplay,2000)
+        function autoplay(){
+          if(num==total){num=0;
+            list.css("margin-left",0)
+          }
+          num++;//0
+          list.stop().animate({"margin-left" : -li_width*num},1000)//1
+        }
+        
+        clearInterval(timer)
+       
+
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Rolling</h1>
+    <div id="frame">
+      <ul id="banner">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+    <a href="#" class="prev">prev</a>
+    <a href="#" class="next">next</a>
+  </body>
+</html>

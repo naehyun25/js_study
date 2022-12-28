@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="galleryWrap">
+    <h1>이미지갤러리</h1>
+    <p><a href="javascript:void(0)" onclick="prevGallery()">◀</a>
+      <img src="img/img1.jpg" id="gallery" width="300" height="200" alt="">
+      <a href="javascript:void(0)" onclick="nextGallery()">▶</a>
+      <!-- a태그#으로 되어있으면 위로 점프하는걸 자바스크립트에서 제어함,원래가지고있던걸 버려! -->
+    </p>
+  </div>
+  <script>
+    
+    
+    //중괄호밖에 선언 : 전역변수 (global)
+    let num=1;
+    function nextGallery(){
+      num++;
+      if(num>7){num=1;}
+      //요렇게 해도되고
+      //if(num<7){num++;}
+      //else if(num>=7){num=1;}
+      console.log(num);
+      document.getElementById("gallery").src="img/img" + num + ".jpg";
+      return false;
+      //js로 a 태그에 마우스오버나 온클릭등 이벤트 줄때 원래가지고 있던건 없애줌.
+      }
+      //let num= 안에선언시 이 공간에 갇힘(밖으로 못가져감:local지역변수)
+      //console.log(document.getElementById("gallery").src="img/img" + num + ".jpg");//test
+    function prevGallery(){
+      num--;
+      if(num<1){num=7;}
+      console.log(num);
+      document.getElementById("gallery").src="img/img" + num + ".jpg";
+      return false;
+    }
+    
+  </script>
+</body>
+</html>
