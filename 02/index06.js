@@ -70,7 +70,7 @@ console.log(typeof(age))
  //gender=="여성"&&age>=20&&age<30?document.write(`<br>true`):document.write(`<br>false`);
 let resulttotal=age>=20&&age<30&&gender=="여성";
 document.write(resulttotal);
-//prompt로 받는 값은 문자열로 반환이 된다.
-
-//method:Number(문자열을 숫자로 바궈주는 함수)
+//prompt로 받는 값은 문자열string로 반환이 된다.
+//계산식을 사용해야 할 경우 자료형을 변환해야 한다.
+//method:Number(문자열을 숫자(자료형)로 바꿔주는 함수)
 console.log()
