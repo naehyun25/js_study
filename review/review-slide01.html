@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slide구현-01</title>
+    
+</head>
+<body>
+    <div id="wrap">
+        <p><a href="#" onclick="prevg()">◀️</a>
+           <img id="gallery" src="../04/img/img1.jpg"  alt="">
+           <a href="#" id="next">▶️</a>
+        </p>
+    </div>
+    <script>
+        //let num=1;
+        //function nextg(){
+        //num++
+        //console.log(num);
+        //if(num>7){num=1;}
+        //console.log(num)
+        //document.getElementById("gallery").src="../04/img/img" + num + ".jpg";}
+        
+        let num=1;
+        nextg=document.getElementById("next")
+        nextg.onclick=function(){
+            num++
+            if(num>7){num=1;}
+            console.log(num)
+        document.getElementById("gallery").src="../04/img/img" + num + ".jpg";}
+        
+
+        function prevg(){
+        num--
+        if(num==0){num=7;}
+        console.log(num)
+        document.getElementById("gallery").src="../04/img/img" + num + ".jpg";}
+
+
+    </script>
+</body>
+</html>
+<!-- 슬라이드구현01 : a 태그인 next와 prev 를 누르면 사진이 다음과 이전으로 움직이는 슬라이드
+1. 구조: p태그 자식으로 a.next와 img a.prev 넣음. 
+2. 기능: 이미지의 src의 번호만 변경하면 이미지가 변경되게끔 하려고한다.
+3.  번호를 변수로 정한다.
+4.  onclick function을 정해서 요소에 넣어준다.
+5.  클릭하면 함수를 실행해서 변수가 바뀌게 한다.(next, prev 방향다르게) 
+<참고할 method>
+중괄호밖에 선언하면 전역변수(global) : 어디든 사용가능
+중괄호안에 선언하면 지역변수(local) : 괄호안에서만 사용가능-밖으로 못 나간다.
+.getElementById (id로 불러오는 선택방법)
+ -->
