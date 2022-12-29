@@ -35,7 +35,7 @@ function move(next){
 
 
 
-})//jQuery
+});//jQuery
 
 
 
@@ -44,6 +44,7 @@ function move(next){
 //jQuery
 //visual.css("background-color","red");
 //js로 쓰면 아래와 같음  : 한번에 한개씩 밖에 안댐....
+
 // document.addEventListener("DOMContentLoaded",function(){
 //     const visual=document.querySelector("#brandVisual>ul>li");
 //     visual.style.backgroundColor="white";
