@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document-민정이가고쳐준거</title>
+  <!-- <script src="for.js"></script> -->
+</head>
+<body>
+  <h1>반복문</h1>
+  <h2>for</h2>
+  <ul class="menu1">
+    <li>List item1</li>
+    <li>List item2</li>
+    <li>List item3</li>
+    <li>List item4</li>
+  </ul>
+  <hr>
+  <h2>foreach</h2>
+  <ul class="menu2">
+    <li>List item1</li>
+    <li>List item2</li>
+    <li>List item3</li>
+    <li>List item4</li>
+  </ul>
+  <hr>
+  <h2>for of</h2>
+  <ul class="menu3">
+    <li>List item1</li>
+    <li>List item2</li>
+    <li>List item3</li>
+    <li>List item4</li>
+  </ul>
+  <hr>
+  <h2>do/while</h2>
+  <ul class="menu4">
+    <li>List item1</li>
+    <li>List item2</li>
+    <li>List item3</li>
+    <li>List item4</li>
+  </ul>
+<script>
+   const menu1=document.querySelectorAll(".menu1 li")
+   for(i=0; i<menu1.length; i++){
+    menu1[i].style.color="red"
+   }
+
+   const menu2=document.querySelectorAll(".menu2 li")
+     menu2.forEach(function (a){})//이름없는 함수도 있다. -> 이름없는 함수는 
+     a.style.color="blue"
+     console.log(a); 
+
+</script>
+
+
+  
+</body>
+</html>

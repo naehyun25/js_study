@@ -12,11 +12,36 @@
       stars[s]='*'
       document.write(stars+'<br>')
     }
-   for(;;){
-    document.write("*")
+    
+
+
+    //조건문 식을 쓸때 첫 시작값과 최종값을 보자.
+    let output='';
+    let i=1;
+    sum=0;
+    for(i=1; i<10; i++){//(첫번째 true)
+      for(let j=0;j<i;j++){//첫번째 실행-> false면
+      output=output+"*"   //건너뛰고
+    }
+      output=output+"<br>"//실행
+    }
+    document.write("<br>"+output)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     
-   }
   </script>
 </head>
 <body>
