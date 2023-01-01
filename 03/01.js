@@ -8,7 +8,7 @@ document.write(str);//선문아 그만자
 document.write(str[1]);//문
 document.write("<br>"+str[0]+str[1]+str[2]+str[6-2]+"<hr>")//숫자가 들어간건 사칙연산이 가능함
 console.log(typeof(str[3])+typeof(str[4]));
-//배열의 총길이(갯수가아니라 길이)
+//배열의 총길이(길이가아니라 갯수)
 //.length는 함수가 아님
 document.write(str.length) //7
 //document.write("<br>"+str[0]+str[1]+str[2]+str[str.length])//undefined

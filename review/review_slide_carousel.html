@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #wrap{width:100%;
+        height:500px;
+        position:relative;}
+        #imgBox{
+            width:800px;
+            height:100%;
+            position:absolute;
+            left:30%;
+        }
+        img{
+            display: block;
+            position:absolute;
+            width: 100%;
+            height:100%;
+            opacity:0;
+        }
+        .on{opacity:1;}
+    </style>
+</head>
+
+
+<body>
+    <div id="wrap">
+        <div id="imgBox">
+            <img src="../04/img/img1.jpg" class="on" alt="">
+            <img src="../04/img/img2.jpg" alt="">
+            <img src="../04/img/img3.jpg" alt="">
+            <img src="../04/img/img4.jpg" alt="">
+        </div>
+    </div>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script>
+    $(function(){
+        var i =0,k=null
+        
+        show();
+        function show(){
+            setInterval(function(){
+                i++
+                k=i-1
+                if(i>4){i=0;}
+                console.log(i,k)
+                view()
+            },5000)
+        }
+        
+        view();
+        function view(){
+
+            $("#imgBox img").eq(i).addClass('on')
+            $("#imgBox img").eq(k).removeClass('on')
+        }
+        
+    });
+    </script>
+</body>
+</html>
+
+/**
+* mainCarousel
+* 시간마다 일시키는 timer
+* 애니메이션효과를 갖고있는 slide
+***/
+
+var i=0,k=null,repeat;
+timer();
+function timer(){
+ 
+ setInterval(function(){
+   i++;
+   k=i-1;
+   if(i==3){i=0;}
+   // (i==3)?i=0:i;
+   console.log(i)
+   console.log(k)
+   slide();
+ },5000);
+
+}
+
+
+function slide(){
+ //-100%->()1s-> 0%->(1s)->100%
+ $('.white_box').css("left","-100%").stop().animate({left:"0%"},1000,
+ function(){
+   $('.white_box').stop().animate({left:"100%"},1000)
+ });
+ $('.slide_cover ul li').eq(i).addClass('on');
+ $('.slide_cover ul li').eq(i).find('h2').addClass('on');
+ $('.slide_cover ul li').eq(i).find('.box1').addClass('on');
+ $('.slide_cover ul li').eq(i).find('p').addClass('on');
+ $('.slide_cover ul li').eq(i).find('a img').addClass('on');
+ $('.slide_cover ul li').eq(k).removeClass('on');
+ $('.slide_cover ul li a img').removeClass('on');
+ console.log("i=",i,"k=",k,)

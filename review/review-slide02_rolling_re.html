@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <style>
+        *{margin:0; padding:0; list-style: none; box-sizing: border-box;}
+        #frame{
+            width:604px;
+            height:300px;
+            position:relative;    
+            margin:0 auto;
+            border:1px solid black;
+            margin:10px auto;
+        }
+        #banner{
+            width: 1200px;
+            display:flex;
+            border:2px solid red;
+            
+        }
+
+        #banner li{
+            width: 200px;
+            height: 200px;
+            background-color: lightcoral;
+            border:1px solid green;
+            font-size:4em;
+            line-height:200px;
+            margin-right: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <ul id="banner">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <a href="#" class="prev">prev</a>
+    <a href="#" class="next">next</a>
+    <a href="#" class="ctrl">ctrl</a>
+    <script>
+        $(function(){
+            let list=$("#banner");
+            const showNumber=3;
+            const totalWidth=list.find("li").length;
+            const liWidth=list.find("li").eq(0).width();
+            const copy=list.find("li").clone().css("background-color","gray")
+            const ctrl=$(".ctrl")
+            list.append(copy);
+
+            let num=0;
+
+            $(".next").click(function(){
+                if(num==totalWidth){num=0;list.css("margin-left",0)}
+                num++;
+                list.stop().animate({"margin-left":-liWidth*num},1000);
+            })
+            $(".prev").click(function(){
+                if(num<1){num=totalWidth;list.css("margin-left",-liWidth*num)}
+                num--;
+                list.stop().animate({"margin-left":-liWidth*num},1000)
+            })
+
+            const timer=setInterval(autoplay,2000)
+
+            ctrl.click(function(){
+                if(ctrl.text()==="play"){
+                    ctrl.text("stop");setInterval(autoplay,2000)
+                }else{ctrl.text("play");clearInterval(timer)}
+                console.log(timer)
+            })
+            
+            function autoplay(){ 
+                    if(num==totalWidth){num=0;list.css("margin-left",0)}
+                    num++;
+                    list.stop().animate({"margin-left":-liWidth*num},1000)
+                }
+                clearInterval(timer)
+                console.log(ctrl)
+
+        
+
+
+        })
+    </script>
+</body>
+</html>
+1. pre, next, 누르면 앞뒤로 움직이게
+2. 움직이는게 안보이게 카피본 붙여서 실행하기
+3. autoplay
+4. ctrl 버튼 누르면 재생됬다가 다시누르면 stop으로 바뀌게 

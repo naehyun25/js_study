@@ -68,6 +68,7 @@
           }
           num--;
           list.stop().animate({"margin-left" : -li_width*num},500);
+          console.log(num)
           return false;
         })
         //overflow:hidden 주석풀고 색깔똑같이 맞추면됨
@@ -76,6 +77,7 @@
         //clearInterval(식별자) 식별자는 setInterval에 붙여주면됨
         //ex, timer = setInterval (autoplay,2000) 이러면 timer란 값에 함수가 담김
         const timer = setInterval(autoplay,2000)
+       
         ctrl.click(function(){
           if(ctrl.text()==="stop"){
             ctrl.text("play"); clearInterval(timer)

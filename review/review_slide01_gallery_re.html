@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap img{
+            width:200px; 
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <p>
+        <a href="javascript:void(0)" id="prev" onclick="pre()">prev</a>
+        <img src="../04/img/img1.jpg" id="gallery" alt="">
+       <a href="#" id="next" onclick="next()">next</a>
+    </p>
+</div>
+<script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+<script>
+let num=1;
+const stn=document.getElementById("gallery")
+function pre(){
+    num--
+    if(num==0){num=7;}
+    stn.src="../04/img/img"+num+".jpg"
+    return false;
+}
+function next(){
+    num++
+    if(num>8){num=1;}
+    stn.src="../04/img/img"+num+".jpg"
+    return false;
+}
+
+
+
+
+</script>   
+</body>
+</html>
