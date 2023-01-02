@@ -13,6 +13,8 @@ do{
   x++;
   total=total+x;
   document.write(x)
-  if(x!=10) document.write("+")
+  document.write(total)
+ // if(x!=10) document.write("+")
 }while(x<10);
+document.write(total)
 document.write("="+total)

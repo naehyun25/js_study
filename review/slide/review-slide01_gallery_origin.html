@@ -15,13 +15,7 @@
         </p>
     </div>
     <script>
-        //let num=1;
-        //function nextg(){
-        //num++
-        //console.log(num);
-        //if(num>7){num=1;}
-        //console.log(num)
-        //document.getElementById("gallery").src="../04/img/img" + num + ".jpg";}
+        //onclick 2가지 방법
         
         let num=1;
         nextg=document.getElementById("next")
@@ -29,14 +23,14 @@
             num++
             if(num>7){num=1;}
             console.log(num)
-        document.getElementById("gallery").src="../04/img/img" + num + ".jpg";}
+        document.getElementById("gallery").src="../../04/img/img" + num + ".jpg";}
         
 
         function prevg(){
         num--
         if(num==0){num=7;}
         console.log(num)
-        document.getElementById("gallery").src="../04/img/img" + num + ".jpg";}
+        document.getElementById("gallery").src="../../04/img/img" + num + ".jpg";}
 
 
     </script>

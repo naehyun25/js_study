@@ -18,7 +18,7 @@
         position: relative;
         margin: 10px auto;
         border: 1px solid blue;
-        /* overflow:hidden*/
+        overflow:hidden
       } /*보이는공간은 좀작게 */
       #banner {
         width: 476px;
@@ -55,15 +55,17 @@
         let num=0;
 
         $(".next").click(function(){
-          if(num==total){num=0;
+          if(num==total){
+            num=0;
           list.css("margin-left",0)
           }
           num++;//0
-          list.stop().animate({"margin-left" : -li_width*num},500)//1
+          list.stop().animate({"margin-left" : -li_width*num},500);//1
         })
 
         $(".prev").click(function(){
-          if(num==0){num=total;
+          if(num==0){
+            num=total;
           list.css("margin-left",-li_width*num)
           }
           num--;
@@ -77,19 +79,22 @@
         //clearInterval(식별자) 식별자는 setInterval에 붙여주면됨
         //ex, timer = setInterval (autoplay,2000) 이러면 timer란 값에 함수가 담김
         const timer = setInterval(autoplay,2000)
-       
+        //clearInterval(timer)
+        //setInerval(autoplay,2000)
         ctrl.click(function(){
           if(ctrl.text()==="stop"){
-            ctrl.text("play"); clearInterval(timer)
-          }else{ctrl.text("stop"); setInterval(autoplay, 2000)
-
+            ctrl.text("play"); 
+            clearInterval(timer)
+          }else{
+            ctrl.text("stop"); 
+            setInterval(autoplay, 2000)
           }
-          console.log(ctrl.text()==="stop");
         })
 
 
         function autoplay(){
-          if(num==total){num=0;
+          if(num==total){
+            num=0;
             list.css("margin-left",0)
           }
           num++;//0

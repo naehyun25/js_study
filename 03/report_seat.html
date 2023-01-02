@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>/
+    <style>
+    table{margin:10px; float:left;}
+    table, th{border:1px solid #ccc; border-collapse:collapse;}
+    td{border:1px solid #222;}
+    </style>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script>
+        //i=colnum
+        //j=totalnum
+        //50/j=줄수 12
+        //50%j=마지막줄 사람
+        //4명씩앉을예정 ->row
+        let i=rownum=(totalnum/colnum)//줄수
+        let colnum=4
+        let totalnum= 50
+        
+        
+        document.write("<table>")
+        for(i=1; i<12; i++){
+            document.write("<tr>")
+            for(j=1; j<=totalnum; j++){
+                if(j%i==0){
+                document.write("<td>좌석j"+j+"</td></tr>")}
+                else{document.write("<td>좌석j"+j+"</td>")}
+            
+        }
+
+        }
+
+        
+
+    </script>
+</head>
+<body>
+    <h1>자리배치도</h1>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+    </table>
+</body>
+</html>

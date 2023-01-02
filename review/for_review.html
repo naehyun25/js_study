@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+   <h1>반복문</h1>
+   <h2>for</h2>
+   <ul class="menu1">
+     <li>List item1</li>
+     <li>List item2</li>
+     <li>List item3</li>
+     <li>List item4</li>
+   </ul>
+   <hr>
+   <h2>foreach</h2>
+   <ul class="menu2">
+     <li>List item1</li>
+     <li>List item2</li>
+     <li>List item3</li>
+     <li>List item4</li>
+   </ul>
+   <hr>
+   <h2>for of</h2>
+   <ul class="menu3">
+     <li>List item1</li>
+     <li>List item2</li>
+     <li>List item3</li>
+     <li>List item4</li>
+   </ul>
+   <hr>
+   <h2>do/while</h2>
+   <ul class="menu4">
+     <li>List item1</li>
+     <li>List item2</li>
+     <li>List item3</li>
+     <li>List item4</li>
+   </ul>
+   <script>
+    const menu1=document.querySelectorAll(".menu1 li")
+    for(let i=0; i<menu1.length; i++){
+        menu1[i].style.color="blue"
+        menu1[i].addEventListener("mouseover", function (){menu1[i].style.color="red"
+        this.style.color="red"})
+        menu1[i].addEventListener("mouseout", function(){menu1[i].style.color="blue"})
+    }
+    
+    const menu2=document.querySelectorAll(".menu2 li")
+    menu2.forEach(function (a,b,c){
+        a.style.color="blue"
+        menu2[b].addEventListener("mouseover",function(){
+            this.style.backgroundColor="pink";
+        })
+        menu2[b].addEventListener("mouseout", function(){
+            this.style.backgroundColor="white"
+        })
+    })
+
+    const menu3=document.querySelectorAll(".menu3 li")
+    for (let k of menu3){
+        k.style.color="blue";
+        k.addEventListener("mouseover",function(){
+            k.style.backgroundColor="green"})
+        k.addEventListener("mouseout",function(){
+            k.style.backgroundColor="white"})
+    }
+    const menu4=document.querySelectorAll(".menu4 li")
+    let y=0;
+    do{
+        menu4[y].style.color="red"
+        menu4[y].addEventListener("mouseover",function(){
+            this.style.backgroundColor="red"
+        })
+        y++;
+    }while(y<menu4.length)
+
+ 
+   </script>
+</body>
+</html>
