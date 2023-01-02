@@ -42,6 +42,7 @@
       $(function () {
         //변수 :변수로 잡을때는 변해야하는 애들을 잡음
         let list=$("#banner");
+        let num=0;
         const show_num=3;//한번에 보일 갯수 지정
         const total=list.find("li").length;
         console.log(length)
@@ -52,7 +53,7 @@
         list.append(copyObj);
         //슬라이드기능 구현 시 번호를 저장할 변수를 먼저 만들자
         const ctrl=$(".ctrl");
-        let num=0;
+        
 
         $(".next").click(function(){
           if(num==total){
@@ -60,7 +61,8 @@
           list.css("margin-left",0)
           }
           num++;//0
-          list.stop().animate({"margin-left" : -li_width*num},500);//1
+          list.stop().animate({"margin-left" : -li_width*num},1000);//1
+          return false;
         })
 
         $(".prev").click(function(){
