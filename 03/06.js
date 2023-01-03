@@ -26,9 +26,7 @@ for(i=0; i<rowNum; i++){
   document.write("</tr>")}
   
   document.write("</table>")
-  
-  //{document.write("<td>좌석:빈자리</td>")}
-    //=> 어떻게 하지?
+
     
 
 //parseInt

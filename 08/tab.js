@@ -21,6 +21,7 @@ menus.click(function(e){
 
 menus.eq(0).addClass('active')
 panels.eq(0).show();
+console.log(menus)
 
 
 //menus.click(function(e){

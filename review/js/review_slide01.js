@@ -23,7 +23,6 @@ $(function(){
     ne.css("left","100%").stop().animate({left:0});
     current=btnIndex;
   }
-//아래 timer가 어떻게 움직이는거지??
   //시간마다실행
    timer();
   function timer() {
