@@ -16,6 +16,9 @@ let sum1=(a,b)=>{
 }
 document.write("<hr>두수의합"+sum1(10,20))
 
+//즉시실행함수
+//return은 따로 작성하지 않아도들어있다. ->값을반환한다.
+//return 에 값을 작성하지 않아도 undefined 를 반환함-이상한거아님
 (function(){
   console.log('hello')
 })()

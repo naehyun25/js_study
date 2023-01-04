@@ -13,7 +13,7 @@
       /* img72px 여백 8px = 80px */
 
       #frame {
-        width: 232px;
+        width: 78px;
         height: 88px;
         position: relative;
         margin: 10px auto;
@@ -89,7 +89,7 @@
             clearInterval(timer)
           }else{
             ctrl.text("stop"); 
-            setInterval(autoplay, 2000)
+            setInterval(autoplay, 3000)
           }
         })
 
@@ -100,7 +100,7 @@
             list.css("margin-left",0)
           }
           num++;//0
-          list.stop().animate({"margin-left" : -li_width*num},1000)//1
+          list.stop().animate({"margin-left" : -li_width*num},2000)//1
         }
         
        // clearInterval(timer)

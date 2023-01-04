@@ -11,6 +11,7 @@ $(function () {
     btnIdx = $(this).index();
     button.removeClass("on");
     $(this).addClass("on");
+    console.log
     move(btnIdx);
   });
   

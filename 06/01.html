@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+<!--jquery
+   <script>
+  $(function(){
+    $("p").css('color','green')
+    $("p:nth-child(2)").css('color','blue')
+    //$(".blue").css('color','blue')
+    //$("p.blue").css('color','blue') 도가능함
+  })//jQuery
+</script> -->
+<!-- js -->
+<!-- function부분 jq 도 arrow 함수로 만들수 있다. -->
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelector("p").style.color="green";
+  document.querySelector("p.blue").style.color="blue";
+
+
+
+})
+</script>
+<!-- 
+  jquery에서 .css() 는 제이쿼리에서 제공하는 함수고("","")라는 인자를 전달하는것
+  js 에서 .style.color는 "속성"
+ -->
+</head>
+<body>
+  <p>초록색</p>
+  <p class="blue">파랑색</p>
+</body>
+</html>

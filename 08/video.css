@@ -1,0 +1,13 @@
+*{margin:0; padding: 0;}
+.main_video{
+  position: relative;
+  width:100%;
+  height:100vh;
+  /* height jq에서 손볼거라 */
+  overflow: hidden;
+}
+.main_video video{
+  width: 100%;
+  height: auto;
+  margin-left: 0;
+}
