@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        .child{
+            width: 50px;
+            height: 50px;
+            padding-left:20px ;
+            background-color: green;
+        }
+        .child:before{
+            content: "🚩";
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="child"></div>
+    </div>
+    <script>
+        const container = document.querySelector(".container")
+        const child =document.querySelector(".child")
+        const containerW=container.clientWidth
+        console.log('containerd의 clientwidth',containerW)
+
+        //getcomputedstyle(스타일을 가져올 요소)
+        let childStyle=Number(
+            window.getComputedStyle(child).getPropertyValue('padding-left')
+            .split('px',1)[0])
+
+            console.log(childStyle)
+        const calc=containerW-childStyle;
+        console.log(calc)
+        //child.style.width=calc
+
+        let pseudo=window.getComputedStyle(child,":before").content;
+        console.log(pseudo)
+    </script>
+</body>
+</html>
