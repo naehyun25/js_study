@@ -36,7 +36,9 @@ for(i=0;i<=2;i++){
   el6[i].style.color="white"}
 
 
+
   //for each ..콜백함수
   el6.forEach(function(b){
     b.style.fontWeight='bolder';
   })
+  

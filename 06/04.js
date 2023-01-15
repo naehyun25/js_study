@@ -7,13 +7,14 @@
 //   el.classList.add("a"+idx)
 // })
 
-//<-----------1/10-------------------->//
+// <-----------1/10-------------------->//
 
 // let list2=document.querySelector(".theObj")
 // //innerHTML //Math.random(난수생성기)
 // list2.innerHTML="<span>"+Math.random()+"</span>"
 // //원래내용없어지고 덧씌워짐
 // list2.setAttribute("data-role","acceessbillity")
+
 // //a태그의 target 속성 변경을 일괄처리할 수도 있음
 // //속성,속성값 입력 ->속성 및 속성값을 변경해주는게 가능함
 // let list22 = list2. getAttribute("class")
