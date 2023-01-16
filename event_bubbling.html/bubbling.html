@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    * {
+	margin: 0;
+	padding: 0;
+    }
+     div{padding:30px; width:20%; color:white;}
+    .one{background:red;}
+    .two{background:green;}
+    .three{background:blue;}
+    </style>
+</head>
+<body>
+    <div class="one"> <span>one</span>
+        <div class="two"> <span>two</span>
+            <div class="three"> <span>three</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        var divs = document.querySelectorAll('div');
+        divs.forEach(function(div){
+            //div.addEventListener('click',logEvent)
+            //div.addEventListener('click',logEvent,{capture:true})//부모부터 내려온 캡쳐
+            div.addEventListener('click',logEvent,{capture:false})//자식에서 올라오면 버블링
+
+        });
+        function logEvent(e){
+            console.log(e.target);//target 이벤트가 발생한 요소를 되돌려줌/이벤트 발생한거
+            console.log(e.currentTarget);//동일:이벤트가 발생한 요소를 되돌려줌/이벤트 등록한거
+            //이벤트를 등록한 대상을 가져올 수 있음
+            console.log(e.currentTarget.className);
+        }
+            
+    </script>
+</body>
+</html>
