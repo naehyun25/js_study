@@ -1,0 +1,35 @@
+:root{
+    --color1:white;
+    --px10:10px
+    /* css 변수 : 색상도 한번에바뀌고 
+    calc 사용할 수도 있다.*/
+}
+
+header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(0,0,0,.6);
+    z-index:100;
+}
+header nav ul{
+    display: flex;
+    justify-content: center;
+}
+header nav ul li{
+    margin: 0 calc(var(--px10)* 2);
+    list-style: none;
+}
+header nav ul li a{
+    color:var(--color1);
+}
+#menu .active a{
+    color:red;
+}
+#fp-nav ul li a.active{
+    color:#f2f2f2;
+    background-color: black;
+    font-weight: bold;
+}
+.on{background-color: #f2f2f2;}

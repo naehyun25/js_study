@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="fullpage.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!-- jq 코어 스크립트 -->
+    <script src="fullpage.js"></script>
+    <script>
+    $(document).ready(function() {
+	    $('#fullpage').fullpage({
+            menu: "#ping", // menu 라고 알려줌 -> 붙이면 active 붙음
+            anchors: ['section1', 'section2', 'section3', 'section4'],
+            sectionsColor: ['coral', '#4BBFC3', '#7BAABE', 'lightblue'],
+            navigation : true,
+            navigationTooltips:['first', 'second','third','fourth'],
+            afterLoad : function(obj,idx){
+                //a: section_번호 / b: index
+                var activeMenu;
+                if(idx==4){
+                    activeMenu=$("#fp-nav").find("li").eq(idx-1).addClass('on')
+                }
+            }
+	    });
+    });
+   
+    </script>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id ="menu">
+                <li data-menuanchor="section1" class="active" ><a href="#section1">section1</a></li>
+                <li data-menuanchor="section2"><a href="#section2">section2</a></li>
+                <li data-menuanchor="section3"><a href="#section3">section3</a></li>
+                <li data-menuanchor="section4" ><a href="#section4">section4</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="fullpage">
+        <div class="section">
+            Some section1
+            <ul id ="ping">
+                <li data-menuanchor="section1" class="active" ><a href="#section1">section1</a></li>
+                <li data-menuanchor="section2"><a href="#section2">section2</a></li>
+                <li data-menuanchor="section3"><a href="#section3">section3</a></li>
+                <li data-menuanchor="section4" ><a href="#section4">section4</a></li>
+            </ul>
+        </div><!-- 문서자체를 감싸는건안댐 -->
+        <div class="section">Some section2
+            <div class="slide">
+                <h2>slide1</h2>
+            </div>
+            <div class="slide">
+                <h2>slide1</h2>
+            </div>
+            <div class="slide">
+                <h2>slide1</h2>
+            </div>
+        </div>
+        <div class="section">Some section3</div>
+        <div class="section">Some section4</div>
+    </div>
+</body>
+</html>
