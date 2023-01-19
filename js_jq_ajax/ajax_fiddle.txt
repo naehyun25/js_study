@@ -1,0 +1,27 @@
+const url='https://dummyjson.com/products'
+const req = new XMLHttpRequest();
+let div = document.querySelector("div");
+
+req.onload=()=>{
+	const datas=req.response;
+	for(data of datas.products){
+	//object Destructuring
+ //배열디스트럭처링(이름으로 사상)
+let {brands, category} = data
+	//let brands = data.brand
+  //let category = data.category
+	let images = data.images
+
+
+div.innerHTML+=`brand:${brands},<br>카테고리:${category}<br>,이미지: <img src = ${images}><hr>`
+}
+  
+
+}
+req.open("GET",url);
+req.responseType="json"
+req.send();
+//function reqListener() {
+//  console.log(this.responseText);
+//}
+//req.addEventListener("load", reqListener);

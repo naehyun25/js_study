@@ -13,18 +13,25 @@
         let request=new XMLHttpRequest();
         request.open("GET",tel)
         request.responseType='document';
-        request.onload(()=>{
-
-        })
+        request.onload= ()=>{
+            let content =request.responseXML;
+            console.log(content);
+            let ids = content.querySelectorAll('[id]')
+            console.log(ids)
+            t1.innerHTML+=ids[0].innerText;
+            t2.innerHTML=ids[1].innerText;
+        }
+        request.send();
         })
     </script>
 </head>
 <body>
     <h1>이야아아아아</h1>
-    <div id="text1"></div>
+    <div id="text1">
+        <p>영화대신연극</p>
+    </div>
     <hr>
     <h1>우아아아아아아아아</h1>
     <div id="text2"></div>
 </body>
 </html>
-<img src="" alt="">
