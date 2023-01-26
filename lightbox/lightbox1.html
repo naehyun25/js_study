@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab</title>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <style>
+        img{max-width:100%; height:auto}
+        .gallery{
+            margin: 0;
+            padding :0;
+            list-style: none;
+        }
+        .gallery li {float:left; width: 48%; margin: 1%;}
+        .gallery li img {transition: opacity 0.3s ease-in-out;}
+        .gallery li img:hover {opacity:0.75 ;}
+        #lightbox-overlay{
+            opacity: 0;
+            position: fixed ;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left:0;
+            background-color:  rgba(29,31,31,.50);
+            pointer-events: none;
+            transition : opacity 0.3s easy in out;
+        }
+        #lightbox-overlay.visible{opacity: 1; pointer-events:auto;}
+        #lightbox-image{max-height: 90%; position: absolute; left: 50%; max-width: 90%; transform: translate(-50%,25%);}     
+        
+    </style>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script src="lightbox-jq.js"></script>
+</head>
+<body>
+    <div class="gallery-container">
+        <ul class="gallery">
+            <li><a href="#"><img src="images/image-thumb-1.jpeg" alt="" data-lightbox="images/image-1.jpeg"></a></li>
+            <li><a href="#"><img src="images/image-thumb-2.jpeg" alt="" data-lightbox="images/image-2.jpeg"></a></li>
+            <li><a href="#"><img src="images/image-thumb-3.jpeg" alt="" data-lightbox="images/image-3.jpeg"></a></li>
+            <li><a href="#"><img src="images/image-thumb-4.jpeg" alt="" data-lightbox="images/image-4.jpeg"></a></li>
+            <li><a href="#"><img src="images/image-thumb-5.jpeg" alt="" data-lightbox="images/image-5.jpeg"></a></li>
+            <li><a href="#"><img src="images/image-thumb-6.jpeg" alt="" data-lightbox="images/image-6.jpeg"></a></li>
+        </ul>
+    </div>
+    <div id="lightbox-overlay"><img src="" id="lightbox-image" alt=""></div>    
+    
+    
+</body>
+</html>
