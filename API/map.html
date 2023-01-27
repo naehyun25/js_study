@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도 생성하기</title>
+    
+</head>
+<body>
+    <!--안되면 라이브서버 주소 localhost:5501--- 로 바꿔서  -->
+<!-- 지도를 표시할 div 입니다 -->
+<div id="map" style="width:500px;height:500px;"></div>
+<p>
+    <button onclick="setCenter()">지도 중심좌표 이동시키기</button> 
+    <button onclick="panTo()">지도 중심좌표 부드럽게 이동시키기</button> 
+</p>
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=bfd9106558f7f5353e9f1db2e080b2ba"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.4718,127.0344), // 지도의 중심좌표
+        level: 5 // 지도의 확대 레벨
+    };
+
+// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+function setCenter() {            
+    // 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(37.505531,127.027987);
+    
+    // 지도 중심을 이동 시킵니다
+    map.setCenter(moveLatLon);
+}
+function panTo() {
+    // 이동할 위도 경도 위치를 생성합니다 
+    var moveLatLon = new kakao.maps.LatLng(37.498198,127.028583);
+    
+    // 지도 중심을 부드럽게 이동시킵니다
+    // 만약 이동할 거리가 지도 화면보다 크면 부드러운 효과 없이 이동합니다
+    map.panTo(moveLatLon);            
+}   
+
+var markerPosition  = new kakao.maps.LatLng(37.4718,127.0344); 
+
+// 마커를 생성합니다
+var marker = new kakao.maps.Marker({
+    position: markerPosition
+});
+
+// 마커가 지도 위에 표시되도록 설정합니다
+marker.setMap(map);
+
+var iwContent = '<div style="padding:5px;">매헌시민의숲 <br><a href="https://map.kakao.com/link/map/Hello World!,37.4718,127.0344" style="color:coral" target="_blank">크게보기</a> <a href="https://map.kakao.com/link/to/Hello World!,37.4718,127.0344" style="color:red" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+    iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+// 인포윈도우를 생성합니다
+var infowindow = new kakao.maps.InfoWindow({
+    position : iwPosition, 
+    content : iwContent 
+});
+  
+// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+infowindow.open(map, marker); 
+
+
+</script>
+</body>
+</html>
+37.4718,127.0344
