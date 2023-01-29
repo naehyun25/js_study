@@ -18,12 +18,12 @@ function getPercent(sct){
 function render(sct,scp){
   progressBar.style.width=(scp+"%")
   text.textContent = sct + "%";
-  console.log(sct,scp)
 }
 //스크롤이벤트함수
 window.addEventListener('scroll',function(){
   scrollTop = window.pageYOffset || document.documentElement.scrollTop || window.scrollY;
-  getPercent(scrollTop)
+  getPercent(scrollTop);
+  console.log(scrollTop)
 
 
 

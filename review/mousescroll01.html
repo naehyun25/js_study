@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  section {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	height:100vh;
+  }
+  .box {
+  	position: fixed;
+  }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<section>
+	<h2>section1</h2>
+</section>
+<script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+<!-- <script>
+    addEventListener("DOMContentLoaded",function(){
+    let h2 = document.querySelectorAll("h2")
+    for(i=0; i<h2.length; i++){
+        h2[i].textContent="section"+(i+1)
+    }
+
+    let scrolltop;
+    window.addEventListener("scroll",function(){
+        scrolltop = window.pageYOffset;
+        document.querySelector(".box").innerHTML="<p>"+scrolltop;
+    })
+})
+</script> -->
+<script>
+    $(function(){
+        const sections = $("section");
+        const h2 = $("h2");
+        let sectionT;
+        h2.each(function(index,h){
+            $(h).text("section"+(index+1))
+        })
+        $(window).scroll(function(){
+            sectionT=$(this).scrollTop();
+            $(".box").html("<p>"+sectionT)
+        })
+    })
+</script>
+</body>
+</html>
