@@ -1,0 +1,90 @@
+/*Mixin : 속성은 같고 값이 다를 때 하나의 코드블럭으로 정의해서 사용*/
+$black : #000000;
+$red : #ff0000;
+$blue : #1e00ff;
+$green : #00ff66;
+$px10: 10px;
+
+//mixin(함수처럼 선언문과 실행문으로 이루어짐)
+@mixin fontSizeBgColor($fontSize, $bgColor){
+ font-size: $fontSize;
+ background-color: $bgColor;
+}
+@mixin Border($border,$borderR){
+    border : $border;
+    border-radius: $borderR;
+}
+@mixin Act($Color:black,$text:none){// 기본값이 default 옵션으로 들어가면 인자를 안써도 기본값이 적용된다.
+    color : $Color;
+    text-decoration: $text;
+}
+
+
+
+html {
+    font-size: 18px;
+  }
+  
+  body {
+    margin: calc($px10 * 10);
+    background-color: wheat;
+  }
+  
+  div {
+    color: #333;
+    padding: 20px;
+  }
+  
+  a {
+    display: inline-block;
+    margin: 10px 0;
+  }
+  
+  #box1 {
+   & {
+    @include fontSizeBgColor(10px,$red);
+    //font-size: 40px;
+    //background-color:$blue;
+    @include Border(5px solid $black,30px);
+    // border-radius: 20px;
+    // border: 3px solid $red;
+    -webkit-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+    }
+    &-title{
+        color:$black;
+    } 
+     & > a {
+        @include Act(white);
+    //    color: #a22;
+    //    text-decoration: none;
+     //   & > a:hover {
+     //     background-color: #ccc;
+     //   }
+       &:hover {
+        @include fontSizeBgColor(30px,black);
+        //  background-color: #ccc;
+       }
+     }
+        & #box2 {    
+            &{
+                @include fontSizeBgColor(20px,$blue);
+                // font-size: 20px;
+                // background-color: #e9e9e9;
+                @include Border(5px solid $green, 100px);
+                // border-radius: 20px;
+                // border: 3px solid $red;
+                -webkit-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
+                        box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);}
+                  & > a {
+                    @include Act(white , overline white);
+                    // color: #ee6633;
+                    // text-decoration: none;
+                    &:hover {
+                        @include Act(black, underline white);
+                        // color: #a22;
+                        // text-decoration: none;
+                      }
+                  }
+            }
+          }
