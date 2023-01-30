@@ -43,21 +43,21 @@
          //1. 반복되는 기능을 함수로 묶고 변하는 부분을 매개변수처리 
          //2. 반복되는 요소를 변수로 저장
          //3. 1번과 2번에서 작성한 함수와 변수를 사용하여 코드를 재작성하기=> 코드리팩토링
-         const btn = $("ul>li"), panel = $('h3')
-         panel.hide();
-         panel.eq(0).show();
-         btn.each(function(i,o){
-            btn.eq(i).click(function(){
-                hidden(panel);
-                visible(panel.eq(i));
-            })
-         })
-        function visible(obj){
-            obj.show();
-         }
-        function hidden(obj){
-            obj.hide();
-         }
+        //  const btn = $("ul>li"), panel = $('h3')
+        //  panel.hide();
+        //  panel.eq(0).show();
+        //  btn.each(function(i,o){
+        //     btn.eq(i).click(function(){
+        //         hidden(panel);
+        //         visible(panel.eq(i));
+        //     })
+        //  })
+        // function visible(obj){
+        //     obj.show();
+        //  }
+        // function hidden(obj){
+        //     obj.hide();
+        //  }
 
         
         // addEventListener("DOMContentLoaded",function(){
@@ -85,6 +85,36 @@
         //         h1.style.display="none";
         //     }
         // })
+        const btn = document.querySelectorAll("ul>li"),
+        panel = document.querySelectorAll("h3");
+
+        //panel.forEach((e,l)=>{
+        //    e.style.display="none";
+        //    panel[0].style.display = "block"
+        //});
+        hidden(panel);
+        visible(panel[0]);
+
+
+        btn.forEach(function(el,i){
+            el.addEventListener("click",()=>{
+                hidden(panel);
+                visible(panel[i]);
+                console.log(panel[i])
+            })
+        })
+        function visible(obj){
+
+            obj.style.display="block"            
+            }
+
+
+        function hidden (obj){
+            obj.forEach((el,i)=>{
+                el.style.display="none"
+            })
+        }
+        
     </script>
 </body>
 </html>
