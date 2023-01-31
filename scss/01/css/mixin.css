@@ -34,7 +34,8 @@ a {
   text-decoration: none;
 }
 #box1 > a:hover {
-  background-color: #ccc;
+  font-size: 30px;
+  background-color: black;
 }
 #box1 #box2 {
   font-size: 20px;
@@ -44,10 +45,12 @@ a {
   box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
 }
 #box1 #box2 > a {
-  color: #ee6633;
-  text-decoration: none;
+  color: white;
+  -webkit-text-decoration: overline white;
+          text-decoration: overline white;
 }
 #box1 #box2 > a:hover {
-  color: #a22;
-  text-decoration: none;
+  color: black;
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
 }/*# sourceMappingURL=mixin.css.map */

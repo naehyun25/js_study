@@ -1,0 +1,8 @@
+@import "base/base"; // 언더바 안써도됨 사스끼리는 
+@import "mixin";
+@import "partial/extend";
+#test{
+    @include fontSizeBgColor(10em,red);
+    @include Act(white);
+    @extend %boxshape;
+}
