@@ -1,0 +1,14 @@
+#sub{
+    max-width: 1360px;
+    width: 100%;
+
+    .row{
+        display: flex;
+        .col{
+            width: 25%;
+            min-height: 200px;
+            background: $color-primary;
+        }
+
+    }
+}

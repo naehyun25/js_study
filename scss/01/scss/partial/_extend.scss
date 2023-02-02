@@ -9,7 +9,9 @@
     border: 3px solid #f00;
     -webkit-box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);
             box-shadow: 0px 3px 11px 0px rgba(0, 0, 0, 0.75);};
-
+#box1 {
+  @extend %boxshape;
+}
 
 #box1-title{
 color:var(--red);
@@ -36,11 +38,7 @@ html {
     margin: 10px 0;
   }
   
-  #box1 {
-    font-size: 40px;
-    // background-color: #ffcccc;
-    @extend %boxshape;
-  }
+
   
   #box1 > a {
     color: #a22;
