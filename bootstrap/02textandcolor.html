@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text and color</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .text-primary,{color:coral !important}
+        .bg-primary{background-color:coral !important}
+    </style>
+    
+</head>
+<body>
+    <h1>텍스트정렬과 색상</h1>
+    <p>기본 : tenetur nesciunt ipsum a iste sit quas. Sunt sequi earum et!</p>
+    <p class="text-start text-uppercase fw-bold">text-start : 왼쪽정렬 uppercase : 모두 대문자 a . fw-bold : 속성, 값 : Sunt sequi earum et!</p>
+    <p class="text-center text-lowercase fw-normal">text-center : 가운데정렬 lowercase : 모두 소문자 fw-normal:normal Tenetur  earum et!</p>
+    <p class="text-end text-capitalize fw-light">text-end : 오른쪽정렬 text-capitalize : 첫글자만 대문자 fw-light:폰트웨이트 sequi earum et!</p>
+    <hr>
+    <!--화면분기점 lg : >992 / md L 768 /  -->
+    <p class="text-lg-start text-md-end fst-italic">
+        text-lg-start text-md-end : 3개 중에 2번째 꺼는 화면분기점!! 작아지면 텍스트 오른쪽 정렬 lg : >992 / md L 768 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa eius fugiat et ipsa, ratione saepe aspernatur ias, blanditiis et consequuntur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos accusantium vel placeat nam delectus. Cumque, beatae minima perspiciatis in dicta ipsa laborum quia. Tenetur voluptas laborum omnis, possimus maiores eaque.
+    </p>
+    <hr>
+    <h1 class="display-1">color</h1>
+    <div class="text-primary">.text-primary</div>
+    <div class="text-secondary">.text-secondary</div>
+    <div class="text-success">.text-success</div>
+    <div class="text-warning bg-primary">.text-warning</div>
+    <div class="text-info bg-success">.text-info / bg-success</div>
+    <div class="text-light bg-info">.text-light/bg-info</div>
+    <div class="text-dark bg-warning">.text-dark /bg-warning</div>
+    <div class="text-white bg-dark">.text-white/bg-dark</div>
+    <div class="text-muted bg-primary">.text-muted bg-primary</div>
+    <div class="text-white bg-danger">.text-white bg-danger</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
