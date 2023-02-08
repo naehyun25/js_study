@@ -10,6 +10,7 @@ $(function(){
                 for(var i in data){
                     //변수명에 영어대신 쓸수있는기호_(js변수)$(jq변슈)
                     var $id=data[i].id;
+                    console.log(data)
                     //console.log(data[i])데이터값 확인해서 변수에 집어넣는다.
                     var $first_name=data[i].first_name;
                     var $last_name=data[i].last_name;

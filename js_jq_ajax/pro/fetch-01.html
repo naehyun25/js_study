@@ -10,6 +10,7 @@
     <script>
         let fetched = fetch('https://jsonplaceholder.typicode.com/photos');
         fetched.then((response)=>{
+            console.log(response)
             let data = response.json();
             data.then((d)=>{console.log("data",d)})
         })
@@ -31,3 +32,4 @@
     </script>
 </body>
 </html>
+http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=10&pageNo=1
