@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        function timer(time){
+            setTimeout(function(){
+                document.write('1초후한다')
+                timer(timer(1000))
+            },time)
+        }
+        //timer(1000)
+
+        let myprom=new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("성공")},1000)
+        })
+        myprom.then((msg)=>{
+            document.write("졸려 정신차려!!!!",msg);
+        })
+        
+        /*
+        1. XMLhttprequest : 원조
+        간편사용 -> fetch
+
+        2. fetch -promise  반환
+        
+        3. promise-> then, catch반환
+        
+        4.promise 객체를 새로 생성시에는 callback 사용
+        */
+        
+    </script> -->
+    <script>
+        function timer(time){
+            return new Promise((resolve)=>{
+                setTimeout(()=>{
+                    resolve(time)
+                },time)
+            })
+        }
+        // timer(1000).then((time)=>{document.write("time"+time)
+        // return timer(time+1000)}).then((time)=>{document.write("time"+time)
+        // return timer(time+1000)})
+
+        // async/ await
+        const run = async ()=>{
+            document.write("시작");
+            let time = await timer(1000);
+            document.write("time"+time);
+        }
+        run();
+        /*
+        ajax: 비동기 처리를 하는 통신방법
+        비동기 작업 시 콜백지옥에 빠짐
+        콜백내에서의 동기식처럼 처리됨-> 콜백내에서 순서가 정해진다.
+        */
+    </script>
+    
+</body>
+</html>
