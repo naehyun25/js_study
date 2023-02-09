@@ -5,10 +5,10 @@ var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + '6c65f8a2-c3bc-
 queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('10'); /*세션당 요청레코드수*/
 queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); /*페이지수*/
 queryParams += '&' + encodeURIComponent('keyword') + '=' + encodeURIComponent(''); /*검색어*/
-
 xhr.open('GET', url + queryParams);
 xhr.onreadystatechange = function () {
-if (this.readyState == 4) {
+    if (this.readyState == 4) {
+    console.log(url+queryParams);
 
 console.log('status: ' + this.status);
 console.log('resultCode: ' + $(this.responseText).find('resultCode').text());
@@ -34,15 +34,15 @@ console.log("items",item);
      var audience = ($(this).find("audience").text());
      var period = ($(this).find("period").text());
 
-     var img = $('<img>').attr('src',"imageObject");
-     console.log(imageObject)
+    //  var img = $('<img>').attr('src',"imageObject");
+    //  console.log(imageObject)
 
      var row = $('<tr/>').append(
          $('<td/>').text(title),
          $('<td/>').text(description),
          $('<td/>').text(viewCount),
          $('<td/>').text(url),
-         $('<td/>').append(img),
+         //$('<td/>').append(img),
          $('<td/>').text(localId),
          $('<td/>').text(sourceTitle),
          $('<td/>').text(eventSite),
