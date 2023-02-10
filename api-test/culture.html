@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //let url ='http://api.kcisa.kr/API_CNV_053/request?serviceKey=1c9ad02c-6cd5-41da-a053-d8a549e0bdbd&numOfRows=10&pageNo=1&format=json'
+
+        const url = fetch('http://api.kcisa.kr/API_CNV_053/request?serviceKey=1c9ad02c-6cd5-41da-a053-d8a549e0bdbd&numOfRows=10&pageNo=1', {
+    headers: {
+        'Accept': 'application/json,text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Content-Type' : 'application/json',
+    }
+});
+
+            getPosts();
+            async function getPosts(){
+                const res = await url;
+                console.log("res",res);
+            }
+
+    </script>
+    6c65f8a2-c3bc-466f-a86d-b83929134f47
+    dataType=XML
+</body>
+</html>

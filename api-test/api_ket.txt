@@ -1,0 +1,55 @@
+//kopis 공연예술통합전산망
+a31fe329cd40468e8b664b205d26e7ff
+예)http://api.kcisa.kr/openapi/service/rest/meta16/getkopis01?serviceKey={서비스 키}&numOfRows=10&pageNo=1
+http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20220601&eddate=20221201&rows=10&cpage=1
+
+
+
+//culture 문화공공데이터
+1c9ad02c-6cd5-41da-a053-d8a549e0bdbd
+http://api.kcisa.kr/API_CNV_053/request?serviceKey=1c9ad02c-6cd5-41da-a053-d8a549e0bdbd&numOfRows=10&pageNo=1
+
+HTTP header에 Accept와 Contents-Type을 함께 application/json 으로 설정하시고 호출하시어 결과 포맷 확인 부탁드리겠습니다.
+Headers : {
+    Accept:application/json
+    Contents-Type : application/json
+}
+
+
+, text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7'
+
+$(function(){
+    //ajax 통신을 위한 함수
+    $.ajax({//라이브러리 등은 메서드 안에 객체표기법을 많이 사용한다.
+        url:'MOCK_DATA.json',//파일위치
+        dataType : 'json',//파일형식
+        success:function(data){
+            //console.log(data)
+            if(data.length>0){//데이터가 있을 경우
+                var tb=$("<table/>")//혼자열고 혼자 닫음.
+                for(var i in data){
+                    //변수명에 영어대신 쓸수있는기호_(js변수)$(jq변슈)
+                    var $id=data[i].id;
+                    console.log(data)
+                    //console.log(data[i])데이터값 확인해서 변수에 집어넣는다.
+                    var $first_name=data[i].first_name;
+                    var $last_name=data[i].last_name;
+                    var $email=data[i].email;
+                    var $gender=data[i].gender;
+                    var $ip_address=data[i].ip_address;
+                    var row = $('<tr/>').append(
+                        $('<td/>').text($id),
+                        $('<td/>').text($first_name),
+                        $('<td/>').text($last_name),
+                        $('<td/>').text($email),
+                        $('<td/>').text($gender)
+                    )
+                tb.append(row)
+                }
+                $('.wrap').append(tb)
+            }
+        }
+    })
+
+
+})    

@@ -4,21 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>기상청</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
 </head>
 <body>
-    
+    <div id="container"></div>
     <script>
-        //날짜생성
-        let date = new Date();
-        let year = String(date.getFullYear());
-        let month = String(date.getMonth()+1).padStart(2,"0");
-        let day = String(date.getDate()).padStart(2,"0");
-        let now = year+month+day;
+        
     </script>
     <!-- <script src="api_data_xhr.js"></script> -->  <!-- 이전거(관공서sample) -->
+    <script src="api_data_date.js"></script>
     <script src="api_data_fetch.js"></script>
 </body>
 </html>
 <!-- AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc%2B%2Bmzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg%3D%3D -->
 <!-- https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc%2B%2Bmzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=20230209&base_time=0600&nx=60&ny=124 -->
+
