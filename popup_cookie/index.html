@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업이에요</title>
+    <style>
+        .popup{
+            position: fixed;
+            left: 100px;
+            top: 100px;
+            border: 1px solid #ebebeb;
+            padding: 40px 60px;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <h1>안녕하세요!!!! 내용입니다!!</h1>
+    <div class="popup">
+        <h2>나는팝업이에오</h2>
+        <input type="checkbox" id="popup">
+        <label for="popup">오늘하루안보기</label>
+        <button class="close">창닫기</button>
+    </div>
+    <!-- 
+        쿠키가 있으면 재방문 -> 팝업안열기
+        쿠키가 없으면 신규방문 -> 팝업열기
+     -->
+    <script>
+        //변수생성
+        const myPop=document.querySelector('.popup'),
+        checkbox=document.querySelector('#popup'),
+        close=document.querySelector('.close');
+        //방문여부 체크변수(css-> 화면 UI를 제어하귀 위한 변수)
+        let visited = false;
+        
+
+        //쿠키생성
+        //setCookie(MangoWeb,popup01,day)
+        function setCookie(name,value,day){
+            let date = new Date();
+            date.setDate(date.getDate()+day);
+            
+            let setCookie='';
+            setCookie += name +'='+value+';';
+            setCookie+='Expires='+date.toUTCString();
+            document.cookie = setCookie;
+        }
+
+        
+        function delCookie(name){
+            let date = new Date();
+            date.setDate(date.getDate()-1);
+
+            let setCookie='';
+            setCookie+=name+'=popup01';
+            setCookie+='Expires='+date.toUTCString();//toUTCString
+            document.cookie = setCookie;
+        }
+        //쿠키체크
+        function checkCookie(name){
+            let cookies = document.cookie.split(';');
+            //브라우저에 저장된 여러개의 쿠키중에서 name 변수와 일치하는 값을 검색
+            for(i in cookies){
+                if(cookies[i].indexOf(name)>-1){//아까온사람=쿠키존재=> 팝업X
+                    visited = true;
+                }
+            }
+            console.log(cookies,visited);
+            if(visited){
+                myPop.style.display='none';
+            }else{
+                myPop.style.display="block";
+            }
+        }
+        checkCookie('MangoWeb');
+        close.addEventListener('click',function(){
+            if(checkbox.checked){//오늘하루안보기, 쿠키생성
+                setCookie("MangoWeb","popup01",1);
+                myPop.style.display='none';
+            }else{//팝업또띄움
+                myPop.style.display='block';
+                delCookie(MangoWeb);
+            }
+        })
+        //setCookie("MagoWeb","popup01",1)
+        //delCookie(name)
+        
+
+
+
+
+    </script>
+</body>
+</html>
