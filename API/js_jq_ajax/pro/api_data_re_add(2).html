@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>광주도시철도공사 문화행사</title>
+</head>
+<body>
+    <div class="wrap"></div>
+    <!-- //<iframe src="https://service.dongledongle.com/ticatalk" frameborder="0" width="100%" height="500">icon</iframe> -->
+    
+    <!-- http://apis.data.go.kr/6300000/eventDataService/eventDataItemJson?serviceKey=AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc++mzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg==&eventSeq=10423 -->
+    <script>
+        var xhr = new XMLHttpRequest();
+        var url = 'http://apis.data.go.kr/6300000/eventDataService/eventDataItemJson'; /*URL*/
+        var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc%2B%2Bmzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg%3D%3D'; /*Service Key*/
+        queryParams += '&' + encodeURIComponent('eventSeq') + '=' + encodeURIComponent('10423'); /**/
+        xhr.open('GET', url + queryParams);
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4) {
+                alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+            }
+        };
+
+xhr.send('');
+    </script>
+</body>
+</html>
+<!-- //AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc%2B%2Bmzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg%3D%3D -->
+<!-- eventDataItemJson
+eventDataListJson -->

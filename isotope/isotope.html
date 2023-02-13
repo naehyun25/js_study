@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>isotope</title>
+    <link rel="stylesheet" href="isotope.css">
+</head>
+<body>
+    <div id="option">
+        <div class="option-set" data-isotope-key="filter">
+            <button data-isotope-value="*">all</button>
+            <button data-isotope-value=".metal">metal</button>
+        </div>
+    </div>
+
+    <div id="container">
+        <div class="element metal">01</div>
+        <div class="element metal">02</div>
+        <div class="element">03</div>
+    </div>
+    <!-- isotope -->
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script>
+        const grid=document.querySelector('#container');
+        // isotope초기화
+        const iso = new Isotope(grid,{
+            //조회할 데이터 요소
+            itemSelector:'.element', //class 명과 지정을 똑같이 해줘야함
+            layoutMode:'fitRows',
+        });
+        const opt=document.querySelector('#option');
+        opt.addEventListener('click',function(e){
+            //클릭한 요소(target=this).parentgNode(그거의부모요소)
+            let key=e.target.parentNode.getAttribute('data-isotope-key')
+            let value=e.target.getAttribute('data-isotope-value')
+            console.log(key,value);
+        })
+    </script>
+</body>
+</html>
