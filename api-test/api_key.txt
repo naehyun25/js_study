@@ -1,0 +1,31 @@
+1. //kopis 공연예술통합전산망 //xml만 제공함
+a31fe329cd40468e8b664b205d26e7ff
+
+
+
+2. //culture 문화공공데이터  //xml , json  
+(HTTP header에 Accept와 Contents-Type을 함께 application/json 으로 설정하시고 호출하시어 결과 포맷 확인 부탁드리겠습니다.
+Headers : {
+    Accept:application/json
+    Contents-Type : application/json
+} 
+)
+6c65f8a2-c3bc-466f-a86d-b83929134f47
+
+예)http://api.kcisa.kr/openapi/service/rest/meta16/getkopis01?serviceKey={서비스 키}&numOfRows=10&pageNo=1
+http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20220601&eddate=20221201&rows=10&cpage=1
+
+url:http://api.kcisa.kr/openapi/service/rest/meta16/getkopis01?serviceKey=a31fe329cd40468e8b664b205d26e7ff&numOfRows=10&pageNo=1
+http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20220601&eddate=20221201&rows=10&cpage=1
+
+
+
+
+3.전국공연행사정보표준데이터(공공데이터)
+
+
+
+end point : http://api.data.go.kr/openapi/tn_pubr_public_pblprfr_event_info_api
+
+일반 인증키 AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc%2B%2Bmzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg%3D%3D
+2번 일반 인증키 AveojOZ5ZNcfL29JQhWKdzFdcIOInK0reWkvwc++mzf5gGSgUoHNv24YP3jNGPiXAUqNyYSfpr2dtsynkZJOgg==

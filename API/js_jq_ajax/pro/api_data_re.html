@@ -24,11 +24,12 @@
             const posts = await getPosts();
             const datas = posts.msgBody;
             console.log(datas);
+            
             datas.forEach((data) => {
                 const postEl = document.createElement("div");
                 postEl.innerHTML=`
                <h3 class = title>${data.title}</h3>
-                <p class = "stdday">공연시작일:${data.beginDt}</p>
+                <p class = "stdday">공연시작일:${data.eventSeq}</p>
                  <p class = "endday">공연마감:${data.endDt}</p>              
                 `;
                 document.querySelector(".wrap").appendChild(postEl);
