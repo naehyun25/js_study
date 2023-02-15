@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문화공공데이터</title>
+</head>
+<body>
+    <!-- 2. //culture 문화공공데이터  //xml , json  
+(HTTP header에 Accept와 Contents-Type을 함께 application/json 으로 설정하시고 호출하시어 결과 포맷 확인 부탁드리겠습니다.
+Headers : {
+    Accept:application/json
+    Contents-Type : application/json
+} 
+)
+6c65f8a2-c3bc-466f-a86d-b83929134f47
+http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84
+-->
+<script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+<!-- <script>
+    var xhr = new XMLHttpRequest();
+    var url = 'http://api.kcisa.kr/API_CNV_053/request'; 
+    var queryParams = '?' + encodeURIComponent('serviceKey') + '=' + '6c65f8a2-c3bc-466f-a86d-b83929134f47'; 
+    queryParams += '&' + encodeURIComponent('numOfRows') + '=' + encodeURIComponent('100');
+    queryParams += '&' + encodeURIComponent('pageNo') + '=' + encodeURIComponent('1'); 
+    queryParams += '&' + encodeURIComponent('keyword') + '=' + encodeURIComponent('2023년'); 
+    console.log(url+queryParams);
+    xhr.open('GET', url + queryParams);
+    xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+
+    console.log('status: ' + this.status);
+    console.log('resultCode: ' + $(this.responseText).find('resultCode').text());
+    console.log('resultMsg: ' + $(this.responseText).find('resultMsg').text());
+
+    var item = $(this.responseText).find('item');
+    $(item).each(function(){
+
+    console.log("title" + $(this).find("title").text());
+    console.log("description" + $(this).find("description").text());
+    console.log("viewCount" + $(this).find("viewCount").text());
+    console.log("url" + $(this).find("url").text());
+    console.log("imageObject" + $(this).find("imageObject").text());
+    console.log("localId" + $(this).find("localId").text());
+    console.log("sourceTitle" + $(this).find("sourceTitle").text());
+    console.log("eventSite" + $(this).find("eventSite").text());
+    console.log("type" + $(this).find("type").text());
+    console.log("contactPoint" + $(this).find("contactPoint").text());
+    console.log("charge" + $(this).find("charge").text());
+    console.log("audience" + $(this).find("audience").text());
+    console.log("period" + $(this).find("period").text());
+
+    });
+
+    };
+
+    }
+    xhr.send('');
+</script> -->
+<!-- <script>
+    const url = ('http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84')
+    fetch(url,{
+        headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+    })
+    .then((response)=>response.text())
+    .then((str)=>new DOMParser().parseFromString(str, 'application/xml'))
+    .then((xml)=>{
+        console.log(xml);
+        let datas=xml;
+        let posters=datas.querySelectorAll('poster');
+        console.log(posters)
+        for(i=0;i<posters.length;i++){
+            
+                let poster = posters[i].innerHTML;
+                let container = document.createElement('div');
+                container.innerHTML=`
+                <img src="${posters[i].innerHTML}" alt="">
+                `
+                document.querySelector('.wrap').appendChild(container);
+            
+        }
+    });
+
+</script> -->
+<script>
+    
+
+    get_data();
+    async function get_data(){
+        
+        const url = ('http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84');
+
+        const response =await fetch(url,{
+        headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
+     });
+     data = await response.json();
+     console.log(data);
+    }
+
+</script>
+</body>
+</html>

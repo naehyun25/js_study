@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+
+    </div>
+    <script>
+         const url = "nh.json";
+        let items_num =0;
+            
+        get_data();
+            
+        async function get_data() {
+         
+          const response = await fetch(url);
+          data = await response.json();
+          console.log("data", data);
+          api_data(data);
+        }
+        
+        function api_data(data) {
+          document.querySelector("#wrap").innerText = `
+          genre : ${data.total.genre}
+          title : ${data.total.sub[1].title}
+          
+          `;
+        }
+        
+    </script>
+</body>
+</html>

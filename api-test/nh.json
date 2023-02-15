@@ -1,0 +1,19 @@
+{
+    "total":{
+    "genre":"musical",
+    "sub":
+      [
+      {"id":"1","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"2","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"3","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"4","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"5","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"6","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"7","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"8","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"9","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"},
+      {"id":"10","rid":"10236","title":"공연명","std":"2023.01.01","locate":"예술원","img":"img/01.jpg","status":"공연중"}
+    ]
+    
+    }
+}

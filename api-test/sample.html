@@ -104,6 +104,46 @@
 
     </script>
 
+    <script>
+        const API_KEY = "K2JXT%2BMu8GnZMyjRfzlGwrMautCkMFKvkv3nxDvP4xpHeexU5hftpnTrmY9IQH%2BhZ4nOxkJEHy2m5TtS8fyamQ%3D%3D";
+        let items_num = 0;
+            
+        get_data();
+            
+        async function get_data() {
+          const url = `http://apis.data.go.kr/6300000/eventDataService/eventDataListJson?type=json&serviceKey=${API_KEY}&pageNo=1&numOfRows=5`;
+          const response = await fetch(url);
+          data = await response.json();
+          console.log("data", data);
+          // api_data(data);
+        }
+        
+        function api_data(data) {
+          document.querySelector(".content").innerText = `
+          음식이름 : ${data.body.items[items_num].DESC_KOR}
+          탄수화물 : ${data.body.items[items_num].NUTR_CONT2}g
+          단백질 : ${data.body.items[items_num].NUTR_CONT3}g
+          지방 : ${data.body.items[items_num].NUTR_CONT4}g
+          `;
+        }
+
+    </script>
+    <script>
+        const fetch_url = "https:://주소"
+
+fetch(fetch_url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        //처리작업
+      });
+    </script>
 
 </body>
 </html>
