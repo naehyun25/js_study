@@ -12,13 +12,17 @@
         <div class="option-set" data-isotope-key="filter">
             <button data-isotope-value="*">all</button>
             <button data-isotope-value=".metal">metal</button>
+            <button data-isotope-value=".food">food</button>
+            <!-- data 라는 접미사로 시작해야함 -->
         </div>
     </div>
 
     <div id="container">
-        <div class="element metal">01</div>
-        <div class="element metal">02</div>
-        <div class="element">03</div>
+        <div class="element-item element metal">01</div>
+        <div class="element-item element metal">02</div>
+        <div class="element-item element">03</div>
+        <div class="element-item element food">04</div>
+        <div class="element-item element food">05</div>
     </div>
     <!-- isotope -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
@@ -33,9 +37,15 @@
         const opt=document.querySelector('#option');
         opt.addEventListener('click',function(e){
             //클릭한 요소(target=this).parentgNode(그거의부모요소)
-            let key=e.target.parentNode.getAttribute('data-isotope-key')
-            let value=e.target.getAttribute('data-isotope-value')
+            let key=e.target.parentNode.getAttribute('data-isotope-key')//filter
+            let value=e.target.getAttribute('data-isotope-value')//filter-value
             console.log(key,value);
+            //클릭시 필터링할 문자열을 취득
+            iso.options[key]=value;
+            //40번에서 취득한 조건에 맞는 요소만 필터링
+            iso.arrange();
+
+            
         })
     </script>
 </body>
