@@ -28,7 +28,7 @@ a31fe329cd40468e8b664b205d26e7ff -->
         });
 </script> -->
 <script>
-    const url = ('http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20221101&eddate=20230331&cpage=1&rows=40&prfstate=01&')
+    const url = ('http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20230221&eddate=20230630&cpage=1&rows=40&shcate=AAAA&signgucode=11')
     fetch(url)
     .then((response)=>response.text())
     .then((str)=>new DOMParser().parseFromString(str, 'application/xml'))

@@ -1,0 +1,26 @@
+
+
+장르코드
+shcate
+GGGA 뮤지컬
+AAAA 연극
+CCCD 대중음악
+CCCA 클래식(서양음악)
+KIDSTATE 가족/아동
+BBBC 무용(서양/한국무용)
+BBBE 대중무용 OR CCCD
+
+공연상태
+prfstate
+01공연예정
+02공연중
+03 공연완료
+
+kidstate (아동공연여부) Y
+
+뮤지컬
+연극
+콘서트
+클래식
+가족/아동
+뮤직페스티벌

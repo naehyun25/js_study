@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form-value</title>
+</head>
+<body>
+    <h1>form 요소의 값을 얻어오기-input type:text</h1>
+    <input type="text" id="myText" value="안녕">
+    <p class="log"></p>
+    <script>
+    //#myText를 상수 element에 할당
+        const element=document.getElementById('myText');
+        //console.log(element);
+    //input의 value 값을 상수 value 에 할당
+//get 보다 호환성이 좋다.->const value=element.value;
+        //get읽기전용 //set은 쓰기전용
+        //console.log(value);
+        //change - input 요소 변경시 값 감지 - > 코딩대장 확인요망
+        //input 값 변경시
+        element.addEventListener('input', handleChange)
+        function handleChange(e){
+            console.log(e);
+            const value = e.target.value;
+            console.log(value)
+            const log=document.querySelector('.log');
+            log.innerHTML=value;
+
+        }
+        //console.log(value)
+    </script>
+
+</body>
+</html>

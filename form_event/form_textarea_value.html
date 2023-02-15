@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form-value</title>
+</head>
+<body>
+    <h1>form 요소의 값을 얻어오기 - textarea</h1>
+    
+    <textarea id="myText">부재시 문앞에</textarea>    
+    <p class="log"></p>
+    <script>//jq
+        const ele = document.querySelector('#myText');
+        //const val = ele.value;
+        //input요소의 값은 전부 value 
+
+        ele.addEventListener('input',handleChange);
+        function handleChange(e){
+            console.log(e);
+            const val = e.target.value; // e의 값중 target 값의 value 값을 얻어옴
+            console.log(val)
+            const log = document.querySelector(".log");
+            //줄바꿈 코드 (->정규표현식->)= \n  (new line 의 약자)
+            //컴퓨터는 숫자만 읽으니까 빈공간이나 특정 문자열을 읽을 수 있게 만들어놓은게 정규표현식 윈도우 안에 다 포함되어있음
+            //정규표현식: 컴퓨터가 화면에 사람이 이해하는 문자를 표현하기 위해 약속된 표현방식
+            const htmlStr = val.split("\n").join("<br/>");
+            log.innerHTML=`뭐라고쓸까요,${htmlStr}`
+
+        }
+
+
+    </script>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script>//jq
+        const el=$('#myText').val();
+        console.log(el);
+    
+    </script>
+
+    
+
+</body>
+</html>

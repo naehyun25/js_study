@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>form-value-selet</title>
+</head>
+<body>
+
+    <select id="mySelect">
+        <option value="떡볶이">떡볶이</option>
+        <option value="orange">orange</option>
+        <option value="apples" selected>apples</option>
+    </select>
+    <p class="log"></p>
+
+    <script>
+        const el = document.querySelector("#mySelect");
+        const log = document.querySelector(".log");
+        let val = el.value;
+        
+        el.addEventListener('change',function(e){
+            console.log(e);
+            val = e.target.value;
+            log.innerHTML = `선택된 과일은 ${val}입니다`    
+        })
+
+
+    </script>
+</body>
+</html>
