@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+<body>
+    필터: 배열에서 원하는 값을 추출해서 새 배열로 만듬
+    
+    <script>
+        const nums =[10,20,3,45,654];
+        const num = nums.filter(function(n){
+            return n>20 ? true:false;
+        });
+        console.log(num);
+
+        const dogs=[
+            {name :"dog1" , age : 10 },
+            {name :"dog2" , age : 20 },
+            {name :"dog3" , age : 30 }
+        ];
+
+        let adult = dogs.filter((dog,idx) => {
+            console.log(dog,idx)
+            if(dog.age>19){
+                return true;
+            //true인 반환값이 adult의 배열값으로 반환된다.
+            }
+        });
+        console.log(adult);
+        for(i=0; i<adult.length; i++){
+            console.log(adult[i].name);
+            console.log(adult[i].age);
+            document.querySelector('body').innerHTML+=`
+            <p>어른인 강아지의 이름은 ${adult[i].name} 나이는 ${adult[i].age}입니다</p>
+
+            `
+
+
+        }
+    </script>
+</body>
+</html>

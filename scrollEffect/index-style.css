@@ -1,0 +1,51 @@
+*{margin: 0; padding:0;}
+nav{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: drop-shadow(2px 2px 5px rgba(255,0,0)) blur(20px)
+    /* blur 간유리효과 ->drop shadow&box-shadow : 좀 다름 : 오버레이 효과에서 요즘 뜸(약간 번지는 효과)사진이랑 같이 쓰면 더 이쁨뿜뿜 */;
+    padding: 20px;
+    width: 100%;
+    box-shadow: 2px 2px 5px rgba(255,0,0);
+}
+nav.sticky{
+    background: rgba(35,197,59,0.4);
+    position: fixed;
+    z-index: 555;
+}
+nav .gnb{
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+nav li{
+    list-style: none;
+    flex:1 1 200px;
+}
+nav li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+nav li a:before{
+    content: '';
+    background: black;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+}
+nav li a:after{
+    content: '';
+    background: black;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+}
+

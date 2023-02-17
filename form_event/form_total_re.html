@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>form-total</title>
+    <title>Document</title>
 </head>
 <body>
     <select id="pref"></select>
     <p class="log"></p>
+    
     <script>
-        
-        // 행정표준코드에 따른 지역별 코드 배열
         const PREF_LIST = [
             { value: 1100, name: '서울' },
             { value: 3611, name: '세종' },
@@ -61,66 +60,41 @@
             { value: 4825, name: '김해' },
             { value: 4831, name: '거제' }
         ];
-        //select
-        const el=document.querySelector("#pref");
-        //option
-        let optStr = `<option value="선택하세요">선택하세요</option>`
+
+        const el = document.querySelector('#pref');
+        /*
+        동적요소생성(자바스크립트로 생성하기)
+        1. 빈 변수 생성(초기값);
+        2. 1번에서 생선한 변수에 배열(반복문-for)의 원소를 추가 1+=2(한두개가 아니라 계속 추가되는거니까)
+        */
+       let optStr = `<option value="선택하세요">선택하세요</option>`;
+        let opt;
+       //console.log(PREF_LIST);
+       PREF_LIST.forEach((item)=>{
+        //console.log(item);
+        optStr+=`<option value="${item.value}">${item.name}</option>`
+       })
+       el.innerHTML=optStr;
+
+       //옵션 변경 시 이벤트 //폼요소 변경 감지는 change //여기서 e 는 이벤트 객체)
+       el.addEventListener('change',function(e){
+        console.log(e);
+        const val = e.target.value;
+        let filtered = PREF_LIST.filter((e,i) => {
+            //e는 내용 i는 인덱스
+            console.log(e,i)
+            if(e.value==val){
+                return true;
+            }
+        });
+        //선택된거에 배열이 1개 밖에 없으니까 [0]
+        console.log(filtered[0].name);
         
-        PREF_LIST.forEach((e)=>{
-            console.log(e);
-            optStr += `<option value="${e.value}">${e.name}</option>`
-            //el.innerHTML=optStr;안에있어도 되고
-        })
-        el.innerHTML=optStr;//밖에있어도 되고
-            // 변경시 이벤트
-            el.addEventListener('change',function(e){
-                console.log("e",e);
-                const val = e.target.value;
-                //배열안에 객체
-                let local;
-                //과제
-                PREF_LIST.forEach(function(v){
-                    if(v.value==val){
-                        local=v.name;
-                    }
-                });
-                //쌤 정답 -> 필터폴더와 form-total-re 파일을 참조
-
-
-
-                document.querySelector(".log").innerHTML=`선택하신 지역은 ${local}  지역코드는 ${val}입니다.`
-            })
-
+        
+        //출력
+        document.querySelector('.log').innerHTML+=`선택하신 지역코드는 ${val} 지역명은 ${filtered[0].name}`
+       })
     </script>
-
-    <!-- <script> 정답
-        // select 요소 참조
-const selectElement = document.querySelector('#pref');
-
-// option 요소 초기 표시 작성
-let optionString = '<option value ="">선택하세요</option>';
-// option 요소를 배열에서 가져오기
-PREF_LIST.forEach((item) => {
-  // 시도별 value와 name 반영
-  optionString +=
-    `<option value="${item.value}">${item.name}</option>`;
-});
-// option 요소를 select 요소에 추가
-selectElement.innerHTML = optionString;
-
-// 변경 시 이벤트
-selectElement.addEventListener('change', (event) => {
-  // 현재 값 가져오기
-  const value = event.target.value;
-
-  // 메시지 작성
-  const message = value === '' ? `지역이 선택되지 않았습니다.` :`선택된 지역은 ${value}입니다.`;
-
-  // 화면에 표시
-  document.querySelector('.log').innerHTML = message;
-});
-
-
-    </script> -->
+    <!-- 활용은 강아지 선택하면 강아지 이미지만 나오게 할 수 있다. -->
 </body>
 </html>
