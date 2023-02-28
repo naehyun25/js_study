@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>horizontal2</title>
+    <link rel="stylesheet" href="horizontal_2.css">
+</head>
+<body>
+    <div class="vertical-section">
+        vertical
+    </div>
+    <div class="sticky-container">
+        <main>
+            <section>
+                <h1>가로-1</h1>
+            </section>
+            <section>
+                <h1>가로-2</h1>
+            </section>
+            <section>
+                <h1>가로-3</h1>
+            </section>
+            <section>
+                <h1>가로-4</h1>
+            </section>
+        </main>
+    </div>
+    <div class="vertical-section">
+        vertical
+    </div>
+    <div class="sticky-container">
+        <main>
+            <section>
+                <h1>가로-1</h1>
+            </section>
+            <section>
+                <h1>가로-2</h1>
+            </section>
+            <section>
+                <h1>가로-3</h1>
+            </section>
+            <section>
+                <h1>가로-4-끝</h1>
+            </section>
+        </main>
+    </div>
+    <!-- <script>
+        const scrollContainer = document.querySelector('main');
+        scrollContainer.addEventListener("wheel",(e)=>{
+            e.preventDefault();
+            //scrollLeft -> 요소의 수평 스크롤바 위치 반환
+            //e.deltaY -> delta 휠방향반환 (올리면 -100 내리면 100)
+            console.log(scrollContainer.scrollLeft,e.deltaY);
+            let amt = scrollContainer.scrollLeft+=e.deltaY;
+        });
+    </script> -->
+    <!-- ver.2  -->
+    <script src="horizontal_2.js"></script>
+</body>
+</html>

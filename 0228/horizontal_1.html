@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>horizontal</title>
-    <link rel="stylesheet" href="horizontal.css">
+    <link rel="stylesheet" href="horizontal_1.css">
 </head>
 <body>
     <main>
@@ -22,5 +22,15 @@
             <h1>4</h1>
         </section>
     </main>
+    <script>
+        const scrollContainer = document.querySelector('main');
+        scrollContainer.addEventListener("wheel",(e)=>{
+            e.preventDefault();
+            //scrollLeft -> 요소의 수평 스크롤바 위치 반환
+            //e.deltaY -> delta 휠방향반환 (올리면 -100 내리면 100)
+            console.log(scrollContainer.scrollLeft,e.deltaY);
+            let amt = scrollContainer.scrollLeft+=e.deltaY;
+        });
+    </script>
 </body>
 </html>
