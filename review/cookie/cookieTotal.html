@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업쿠키</title>
+    <style>
+        .popup-wrap{
+            position: fixed;
+            left: 100px;
+            top: 100px;
+            border: 1px solid red;
+            padding: 30px;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-wrap">
+        <p>팝업창으로 쿠키생성 , 삭제</p>
+        <input type="checkbox" id="popup">
+        <label for="popup">일주일동안안보기</label>
+        <button class="close">닫기</button>
+    </div>
+    <script>
+        const popupDiv=document.querySelector(".popup-wrap");
+        const checkDoNotOpen = document.querySelector("#popup");
+        const close = document.querySelector('.close');
+        let visited=false;
+
+
+        function setCookie(name,value,day){
+            let date = new Date();
+            date.setDate(date.getDate()+day);
+            let setCookie='';
+            setCookie +=name+'='+value+';';
+            setCookie += "Expires="+date.toUTCString();
+            document.cookie= setCookie;
+        };
+
+        function delCookie(name, value){
+            let date = new Date();
+            date.setDate(date.getDate()-1);
+            let setCookie='';
+            setCookie +=`${name}=${value};`
+            setCookie += 'Expires='+date.toUTCString();
+            document.cookie= setCookie;
+            console.log(setCookie)
+        };
+        function checkCookie(name){
+            let cookies = document.cookie.split(';');
+            for(let i in cookies){
+                if(cookies[i].indexOf(name)>-1){
+                    visited = true;
+                }
+            }
+            if(visited){
+                popupDiv.style.display='none';
+            }else{
+                popupDiv.style.display='block';
+            }
+        };
+
+    //매개변수로 함수이용
+        checkCookie('naeWeb');
+
+        close.addEventListener('click',function(){
+            if(checkDoNotOpen.checked){
+                console.log(checkDoNotOpen.checked)
+                setCookie('naeWeb','popupcookie',7);
+                popupDiv.style.display='none';
+            }else{
+                delCookie('naeWeb','popupcookie');
+                popupDiv.style.display='none'
+            }
+        })
+    </script>
+</body>
+</html>

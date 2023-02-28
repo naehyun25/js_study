@@ -10,20 +10,13 @@
     <button class="delete">쿠키삭제</button>
 
     <script>
-     //쿠키생성
-     let date = new Date();
-     date.setDate(date.getDate()+7);
 
-     let setCookie ='';
-    setCookie+='NaeWeb=popupC;'
-    setCookie+='Expires='+date.toUTCString();
-    document.cookie = setCookie;
 
     //쿠키삭제 (expires를 앞당겨준다.)
     function delCookie(){
         let date = new Date();
         date.setDate(date.getDate()-1);
-        let setCookie = '';
+        let setCookie='';
         setCookie+='NaeWeb=popupC;'
         setCookie+='Expires='+date.toUTCString();
         document.cookie = setCookie;
