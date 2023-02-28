@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        //쿠키생성
+        let date = new Date();
+        date.setDate(date.getDate()+7);
+
+            //쿠키지정변수
+        let setCookie='';
+        setCookie+='naehyunProject=popupCookie;'
+        setCookie+='Expires='+date.toUTCString();
+        document.cookie=setCookie;
+        console.log(setCookie)
+        //;Domain=도멘인;Path=경로;Secure;
+
+        //click 이벤트시 del쿠키 함수 호출
+        document.querySelector('').addEventListener("click",function(){
+            delCookie();
+        })
+
+        //쿠키삭제
+        //delCookie();
+        function delCookie(){
+            date.setDate(date.getDate()-1);
+        }
+    </script>
+    <script>
+        function setCookie(){
+            
+        }
+
+    </script>
+
+</body>
+</html>
