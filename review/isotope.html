@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container>div{ background-color: bisque; border:1px solid black;
+        width: 50px; height:50px;}
+    </style>
+</head>
+<body>
+    <div class="options">
+        <div class="option-set" data-optionkey="filter">
+            <button class="data-option" data-option="*">all</button>
+            <button class="data-option" data-option=".number1">number1</button>
+            <button class="data-option" data-option=".number2">number2</button>
+            <button class="data-option" data-option=".number3">number3</button>
+        </div>
+    </div>
+
+    <div id="container">
+        <div class="item element number1">1</div>
+        <div class="item element number1">1</div>
+        <div class="item element">all</div>
+        <div class="item element number2">2</div>
+        <div class="item element number3">3</div>
+    </div>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <script>
+        //new isotope 객체 만들기
+        const grid = document.querySelector('#container');
+        const isotope = new Isotope(grid,{
+            itemSelector : '.item',
+            layoutMode : 'fitRows',
+        });
+
+        const option = document.querySelector('.options');
+        option.addEventListener('click',function(e){
+            console.log(e)
+            let key = e.target.parentNode.getAttribute('data-optionkey');
+            let value = e.target.getAttribute('data-option');
+            console.log(key, value);
+            isotope.options.filter=value;
+            isotope.arrange();
+        }) 
+    </script>
+</body>
+</html>
