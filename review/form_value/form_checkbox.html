@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form-chcckbox</title>
+</head>
+<body>
+    <div class="input"> 
+        <label><input type="checkbox" id="Abc" value="A" >체크박스A</label>
+        <label><input type="checkbox" id="aBc" value="B">체크박스B</label>
+        <label><input type="checkbox" id="abC" value="C">체크박스C</label>
+    </div>
+    <p class="log"></p>
+    <script>
+        const group = document.querySelector('.input');
+        const inputs = document.querySelectorAll('input');
+        const log = document.querySelector('.log');
+
+        group.addEventListener('click',function(e){
+         for(i=0; i<inputs.length; i++){
+             if(inputs[i].checked){
+                log.innerHTML+=`선택한것은 ${inputs[i].getAttribute('value')}이고, check값은 ${inputs[i].checked}입니다.<br>`     
+                }else{
+                    log.innerHTML+=`선택안한것은 ${inputs[i].getAttribute('value')}이고,
+                    check값은 ${inputs[i].checked}입니다.<br/>`
+                }
+             }
+        });
+
+
+    </script>
+</body>
+</html>
