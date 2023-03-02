@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap.to</title>
+    <style>
+        .box{ margin: 15px; }
+        .box1{ width: 100px; height: 100px; background: orange; }
+        .box2{ width: 200px; height: 100px; background: greenyellow; }
+        .box3{ width: 100px; height: 200px; background : tomato; }
+    </style>
+</head>
+<body>
+    <!-- gsap 애니메이션 라이브러리 자바스크립트 라이브러리인데 jquery도 가능하다
+        카멜케이스 사용해야함 -->
+    <!-- 교안 cheatsheet 도 있고 codepen 에 gsap 도 있음  -->
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>
+        //transfer 속성은 전부 사용가능함.
+        gsap.from(".box1",{
+            duration: 3,
+            x:200,
+            opacity:0.2,
+            ease:'steps(10)',//10단계로 끊어서 보여줌
+            delay:2
+        });
+        gsap.from(".box2",{
+            duration: 3,
+            x:500,
+            rotate:720,
+            scale:1.3//130%
+        });
+        gsap.to(".box3",{
+            duration: 10,
+            y:300,
+            x:400,
+            ease:'elastic',
+            rotate:720,
+            scale:1.3,//130%
+            background:"yellow",
+            winth:10
+        });
+    </script>
+</body>
+</html>

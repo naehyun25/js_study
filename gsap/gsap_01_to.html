@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gsap.to</title>
+    <style>
+        .box{ margin: 15px; }
+        .box1{ width: 100px; height: 100px; background: orange; }
+        .box2{ width: 200px; height: 100px; background: greenyellow; }
+        .box3{ width: 100px; height: 200px; background : tomato; }
+    </style>
+</head>
+<body>
+    <!-- gsap 애니메이션 라이브러리 자바스크립트 라이브러리인데 jquery도 가능하다
+        카멜케이스 사용해야함 -->
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+    <script>
+        gsap.to(".box",{x:200})
+    </script>
+</body>
+</html>
