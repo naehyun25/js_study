@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 사용법1 -->
+    <script type="module">
+        import {say} from './say.js'; //import (경로사용시 ./ 를 꼭 붙여야한다.)
+        document.body.innerHTML=say('망고');
+    </script>
+    <!-- 사용법2 -->
+    <script type="module">
+        import app from "./say.js";
+        //default로 된 모듈은 import 시 {} 로 안묶어도된다 -> 어차피 default는 하나만 export 할때 쓰니까
+        app('누구게');
+
+    </script>
+</body>
+</html>
