@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sessionStorage</title>
+</head>
+<body>
+    <script>
+        //session스토리지는 브라우저 종료 하면 데이터가 파기된다.(setItem 주석처리해놓으면) 다시키면 없어져있음
+        //세션스토리지 생성 setItem('이름-key','값-value'); 
+        sessionStorage.setItem('강아지','망고');
+        const value =sessionStorage.getItem('강아지');
+        console.log(value)
+        //세션스토리지 삭제
+        alert(value);
+        sessionStorage.removeItem('강아지');//특정 스토리지만 삭제할때 명령어 removeItem()
+        sessionStorage.clear();//전체 스토리지 전부 다 삭제할때 clear()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalized.css">
+    <link rel="stylesheet" href="modal_popup.css">
+</head>
+<body>
+    <div class="article-container">
+        <header class="header">
+          <h1 class="heading">포트폴리오</h1>
+        </header>
+        <article class="content">
+          <p>마우스가 떠나면 나타나는 팝업</p>
+        </article>
+    </div>
+    <div class="modal-container">
+      <article class="modal">
+        <h2>모달팝업</h2>
+        <p>마우스가 떠나면 나타나는 팝업</p>
+        <form action="#" method="post">
+          <input id="subscribe-email" type="email" value="" placeholder="Your email" name="member[email]" class="email">
+          <input type="submit" name="member[subscribe]" class="button" value="Subscribe">
+        </form>
+      <p><a href="#" class="close" id="close-modal">오늘 하루 창 안보기</a></p>
+      </article>
+    </div>
+    <script src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+    <!-- <script>
+        $(function(){
+            //마우스 윈도우창 밖으로 벗어나면 세션에 저장된 정보여부확인
+            $(window).mouseleave(function(e){
+                //modalSeen 값이 null 인 경우 새 방문자
+                var modalSeen = sessionStorage.getItem(modalSeen);
+                console.log(modalSeen);
+                if(e.toElement==null && !modalSeen){//toElement = 윈도우 하위 모든 태그
+                    document.documentElement.classList.add('mouse-out'); //documentElement=>body 로 변경가능한데
+                    /*documentElement 로 했을 경우는 html 에 클래스가 붙고, 
+                    body는 body에 클래스가 붙는다.
+                    그래서 위아래 똑같이 documentElement나 body로 통일해야한다.*/
+                }
+            })
+            $("#close-modal").click(function(e){
+                e.preventDefault();
+                document.documentElement.classList.remove("mouse-out");
+                sessionStorage.setItem('modalSeen',true);
+            })
+            //세션에 정보가 있으면 기존방문자
+        })
+    </script> -->
+    <script>
+        let modalSeen;
+        let closeBtn = document.querySelector('#close-modal');
+        document.addEventListener("mouseleave",function(e){
+            console.log(e.toElement) 
+            // 마우스가 빠져나갔으니까 요소가 없다. 원래는 html전체 요소가 나옴
+            modalSeen = sessionStorage.getItem("modalSeen");
+            if(modalSeen==null){
+                document.querySelector('body').classList.add('mouse-out');
+            }
+        });
+        closeBtn.addEventListener("click", function(e){
+            e.preventDefault();
+            console.log(e.toElement)
+            document.querySelector('body').classList.remove('mouse-out');
+            sessionStorage.setItem("modalSeen",true);
+        })
+
+    </script>
+
+</body>
+</html>

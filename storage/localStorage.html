@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localstorage</title>
+</head>
+<body>
+    <script>
+        //local스토리지는 한번 저장하면 브라우저 종료 하고 다시켜도 저장되어있음(setItem 주석처리해놔도)
+        //로컬스토리지 생성 setItem('이름-key','값-value'); 
+        localStorage.setItem('강아지','망고');
+        const value =localStorage.getItem('강아지');
+        alert(value);
+        //로컬스토리지 삭제
+        localStorage.removeItem('강아지');//특정 스토리지만 삭제할때 명령어 removeItem()
+        localStorage.clear();//전체 스토리지 전부 다 삭제할때 clear()
+
+    </script>
+</body>
+</html>
