@@ -38,13 +38,13 @@
             sample.onmousedown=function(){
                 let self=this;//이벤트가 발생한 그 대상을 지칭하고 마우스다운이란 이벤트내용과 샘플 (그림)을 연결해주는 역할을 한다
                 console.log("익명함수",self);
-                sample.onmousemove=function(e){
+                document.onmousemove=function(e){
                     //왼쪽클릭 후 움직이는 상황
                     movinImg(e,self);
                 }
             };
             sample.onmouseup=function(){
-                    sample.onmousemove=null;
+                    document.onmousemove=null;
             };
 
                 
