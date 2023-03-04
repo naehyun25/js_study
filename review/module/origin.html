@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- import 방법 1 -->
+    <script type="module">
+         //import (경로사용시 ./ 를 꼭 붙여야한다.)
+        import {say} from './origin.js';
+        say('나야나');
+
+
+    </script>
+    <script type="module">
+        //default로 된 모듈은 import 시 {} 사용안함 
+        //-> 어차피 default는 하나만 export 할때 쓰니까
+        import hi from './origin.js';
+        hi('나야나');
+    </script>
+    <script type = "module">
+        import {func1,func2,var1} from './origin.js';
+        func1();
+        func2('똑똑');
+        console.log(var1);
+    </script>
+</body>
+</html>
