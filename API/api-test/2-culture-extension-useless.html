@@ -27,6 +27,9 @@ http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b8392
     queryParams += '&' + encodeURIComponent('keyword') + '=' + encodeURIComponent('2023년'); 
     console.log(url+queryParams);
     xhr.open('GET', url + queryParams);
+    //추가
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.setRequestHeader("Contents-Type", "application/json");
     xhr.onreadystatechange = function () {
     if (this.readyState == 4) {
 
@@ -57,36 +60,62 @@ http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b8392
 
     }
     xhr.send('');
-</script> -->
-<!-- <script>
-    const url = ('http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84')
-    fetch(url,{
-        headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json",
-      },
-    })
-    .then((response)=>response.text())
-    .then((str)=>new DOMParser().parseFromString(str, 'application/xml'))
-    .then((xml)=>{
-        console.log(xml);
-        let datas=xml;
-        let posters=datas.querySelectorAll('poster');
-        console.log(posters)
-        for(i=0;i<posters.length;i++){
-            
-                let poster = posters[i].innerHTML;
-                let container = document.createElement('div');
-                container.innerHTML=`
-                <img src="${posters[i].innerHTML}" alt="">
-                `
-                document.querySelector('.wrap').appendChild(container);
-            
-        }
-    });
-
-</script> -->
+</script>  -->
 <script>
+//     const url = ('http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84')
+//     const headers = {
+//         'Content-Type': "application/json",
+//         'Accept': "application/json"
+//     }
+//     fetch(url,{headers})
+//     .then(response => {
+//     if (!response.ok) {
+//       throw new Error('Network response was not ok');
+//     }
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log(data);
+        
+//         let posters=data.querySelectorAll('poster');
+//         console.log(posters)
+//         for(i=0;i<posters.length;i++){
+            
+//                 let poster = posters[i].innerHTML;
+//                 let container = document.createElement('div');
+//                 container.innerHTML=`
+//                 <img src="${posters[i].innerHTML}" alt="">
+//                 `
+//                 document.querySelector('.wrap').appendChild(container);
+            
+//         }
+//   })
+//   .catch(error => {
+//     console.error('Error fetching data:', error);
+//   });
+
+
+    // .then((response)=>response.text())
+    // .then((str)=>new DOMParser().parseFromString(str, 'application/json'))
+    // .then((xml)=>{
+    //     console.log(xml);
+    //     let datas=xml;
+    //     let posters=datas.querySelectorAll('poster');
+    //     console.log(posters)
+    //     for(i=0;i<posters.length;i++){
+            
+    //             let poster = posters[i].innerHTML;
+    //             let container = document.createElement('div');
+    //             container.innerHTML=`
+    //             <img src="${posters[i].innerHTML}" alt="">
+    //             `
+    //             document.querySelector('.wrap').appendChild(container);
+            
+    //     }
+    // });
+
+</script>
+<!-- <script>
     
 
     get_data();
@@ -96,13 +125,29 @@ http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b8392
 
         const response =await fetch(url,{
         headers: {
-        "Content-Type": "application/json",
+        "Contents-Type": "application/json",
         "Accept": "application/json",
       },
      });
      data = await response.json();
      console.log(data);
     }
+
+</script> -->
+<script>
+    
+ 
+    $.ajax({
+        type: "GET",
+        url: "http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84",
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("Contents-type","application/json");
+            xhr.setRequestHeader("Accept","application/json");
+        },
+        success: function (res) {
+            console.log(res);
+        }
+    });
 
 </script>
 </body>
