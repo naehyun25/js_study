@@ -124,10 +124,10 @@ http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b8392
         const url = ('http://api.kcisa.kr/API_CNV_053/request?serviceKey=6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=100&pageNo=1&keyword=2023%EB%85%84');
 
         const response =await fetch(url,{
-        headers: {
+        let modifyHeader=new Headers: ({
         "Contents-Type": "application/json",
         "Accept": "application/json",
-      },
+      }),
      });
      data = await response.json();
      console.log(data);

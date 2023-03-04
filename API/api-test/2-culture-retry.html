@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul></ul>
+  <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+  <!-- <script>
+    get_data();
+    async function get_data(){
+        
+        const url = ('http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20220601&eddate=20221201&rows=10&cpage=1');
+
+        let modifyHeader= new Headers({
+            "Contents-Type": "application/json",
+            "Accept": "application/json",
+            })
+
+        const response =await fetch(url,modifyHeader);
+        console.log(response);
+        data = await response.json();
+         console.log(data);
+    }
+  </script> -->
+  <script>  
+     const url = ('http://www.kopis.or.kr/openApi/restful/pblprfr?service=a31fe329cd40468e8b664b205d26e7ff&stdate=20220601&eddate=20221201&rows=10&cpage=1');
+     
+
+     fetch(url,{
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+            }
+        })
+        .then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+})
+.then(data => {
+  console.log(data);
+})
+.catch(error => {
+  console.error('Error fetching data:', error);
+});
+
+  </script>
+</body>
+
+</html>
