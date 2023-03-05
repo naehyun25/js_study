@@ -22,11 +22,11 @@
     <script>
         let elem = document.querySelector('div');
         let rect = elem.getBoundingClientRect();
-        for (var key in rect) {
+   
             let para = document.createElement('p');
-            para.textContent  = `${ key } : ${ rect[key] }`;
+            para.textContent  = `${ key } : ${ rect[0] }`;
             document.body.appendChild(para);
-        }
+        
     </script>
 </body>
 </html>
