@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spread01</title>
+</head>
+<body>
+    
+
+    <script>
+        //spread연산자, 펼쳐지는 연산자, 전개연산자
+        const dog = {kinds:'말티즈', gender:"여자"};
+        const mangoDog={...dog,age:6};
+        console.log(mangoDog);
+
+        const alpa = {a:'A',b:'B'};
+        const beta = {c:'ㄱ', d:"ㄴ"};
+        const alpabeta={...alpa,...beta};
+        console.log(alpabeta);
+
+
+        //배열
+        const char =['바람돌이','보노보노','스티치'];
+        const animal =['기린', '낙타', '코알라'];
+        const iLike =[...char, ...animal];
+        const ilike =[...char,'human']
+        console.log(iLike)
+        console.log(ilike)
+
+
+//사용예. 서로다른 api 주소를 받아서 이미지,, 네임 받아서
+//이렇게 합쳐도 됨
+
+    </script>
+</body>
+</html>
