@@ -1,0 +1,24 @@
+<svg width="236" height="236" viewBox="0 0 236 236" fill="none" xmlns="http://www.w3.org/2000/svg" id="svgID">
+<style>
+#svgID{
+    position:absolute;
+    left:50px;
+}
+.name{
+    fill:pink; 
+    transform:scale(0.78);
+    }
+.name.hover{fill:yellow; transform:scale(0.5);}
+</style>
+<circle class="name" cx="118" cy="118" r="118" fill="#ED2323"/>
+<script>
+const shape = document.querySelector(".name");
+console.log(shape)
+document.addEventListener('mouseover',()=>{
+    shape.classList.add('hover');
+})
+document.addEventListener('mouseout',()=>{
+    shape.classList.remove('hover');
+})
+</script>
+</svg>
